@@ -13,6 +13,21 @@ const authRouter = require("./routes/auth-router");
 
 var app = express();
 
+//mongoose connection
+
+mongoose
+  .connect(`mongodb://localhost:27017/${process.env.DB_NAME}`, {
+    useNewUrlParser: true
+  })
+  .then(x => {
+    console.log(
+      `Connected to Mongo! Database name: “${x.connections[0].name}“`
+    );
+  })
+  .catch(err => {
+    console.error("Error connecting to mongo", err);
+  });
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
