@@ -19,19 +19,20 @@ authRouter.post("/signup", (req, res, next) => {
   User.findOne({ email }).then((user) => {
     if (user !== null) {
       res.render("auth-views/signup", {
-        errorMessage: "There was an error, try again",
+        errorMessage: "These details are already registered, try again",
       });
       return;
     }
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPW = bcrypt.hashSync(password, salt);
-    User.create({ username, password: hashedPW })
+    User.create({ fullname, email, password: hashedPW })
       .then((createdUser) => {
         res.redirect("/");
       })
       .catch((err) => {
         res.render("auth-views/signup", {
-          errorMessage: "There was an error try again!",
+          errorMessage:
+            "There was an error with you details, please try again!",
         });
       })
       .catch((err) => next(err));
