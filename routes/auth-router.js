@@ -10,33 +10,34 @@ authRouter.get("/signup", (req, res, next) => {
 
 authRouter.post("/signup", (req, res, next) => {
   const { fullname, email, password } = req.body;
-  if (email === "" || password === "" || fullname === "") {
+  if (fullname === "" || email === "" || password === "") {
     res.render("auth-views/signup", {
       errorMessage: "Please enter all your details",
     });
     return;
   }
-  User.findOne({ email }).then((user) => {
-    if (user !== null) {
-      res.render("auth-views/signup", {
-        errorMessage: "These details are already registered, try again",
-      });
-      return;
-    }
-    const salt = bcrypt.genSaltSync(saltRounds);
-    const hashedPW = bcrypt.hashSync(password, salt);
-    User.create({ fullname, email, password: hashedPW })
-      .then((createdUser) => {
-        res.redirect("/");
-      })
-      .catch((err) => {
+  User.findOne({ email })
+    .then((user) => {
+      if (user !== null) {
         res.render("auth-views/signup", {
-          errorMessage:
-            "There was an error with you details, please try again!",
+          errorMessage: "There was an error, try again",
         });
-      })
-      .catch((err) => next(err));
-  });
+        return;
+      }
+      const salt = bcrypt.genSaltSync(saltRounds);
+      const hashedPW = bcrypt.hashSync(password, salt);
+
+      User.create({ fullname, email, password: hashedPW })
+        .then((createdUser) => {
+          res.redirect("/");
+        })
+        .catch((err) => {
+          res.render("auth-views/signup", {
+            errorMessage: "There was an error try again!",
+          });
+        });
+    })
+    .catch((err) => next(err));
 });
 
 module.exports = authRouter;
