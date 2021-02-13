@@ -20,10 +20,15 @@ mainRouter.get("/courses", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-mainRouter.get("/courses/:technology",isLoggedIn, (req, res, next) => {
-  const {technology} = req.params
-  Course.find({technology})
-  res.render("user-views/technology-view");
-}); 
+mainRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
+  const { technology } = req.params;
+  const techLowercased = technology.toLowerCase();
+  Course.find({ technology: techLowercased })
+    .then((courses) => {
+      const data = { courses: courses };
+      res.render("user-views/technology-view", data);
+    })
+    .catch((err) => console.log(err));
+});
 
 module.exports = mainRouter;
