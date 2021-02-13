@@ -8,7 +8,6 @@ const saltRounds = 10;
 authRouter.get("/signup", (req, res, next) => {
   res.render("auth-views/signup");
 });
-
 authRouter.post("/signup", (req, res, next) => {
   const { fullname, email, password } = req.body;
   if (fullname === "" || email === "" || password === "") {
@@ -38,7 +37,6 @@ authRouter.post("/signup", (req, res, next) => {
       }
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPW = bcrypt.hashSync(password, salt);
-
       User.create({ fullname, email, password: hashedPW })
         .then((createdUser) => {
           res.redirect("/user");
