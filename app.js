@@ -14,7 +14,6 @@ const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth-router");
 const mainRouter = require("./routes/main-router");
 const isLoggedIn = require("./utils/middleware");
-const technologyMiddleware = require("./utils/middleware");
 
 var app = express();
 
