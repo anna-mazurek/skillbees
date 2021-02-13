@@ -1,4 +1,5 @@
 const express = require("express");
+const Course = require("../models/course");
 const mainRouter = express.Router();
 
 const { isLoggedIn } = require("./../utils/middleware");
