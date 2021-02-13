@@ -8,4 +8,8 @@ mainRouter.get("/", isLoggedIn, (req, res, next) => {
   res.render("user-views/homepage");
 });
 
+mainRouter.get("/favorites", isLoggedIn, (req, res, next) => {
+  res.render("user-views/mycourses");
+});
+
 module.exports = mainRouter;
