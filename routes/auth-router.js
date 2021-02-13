@@ -41,7 +41,7 @@ authRouter.post("/signup", (req, res, next) => {
 
       User.create({ fullname, email, password: hashedPW })
         .then((createdUser) => {
-          res.redirect("/");
+          res.redirect("/user");
         })
         .catch((err) => {
           res.render("auth-views/signup", {
@@ -75,7 +75,7 @@ authRouter.post("/login", (req, res, next) => {
       console.log(passwordCorrect);
       if (passwordCorrect) {
         req.session.currentUser = user;
-        res.redirect("/");
+        res.redirect("/user");
       } else {
         res.render("auth-views/login", {
           errorMessage: "Error please try again",
@@ -83,6 +83,16 @@ authRouter.post("/login", (req, res, next) => {
       }
     })
     .catch((err) => console.log(err));
+});
+
+authRouter.get("/logout", (req, res, next) => {
+  req.session.destroy(function (err) {
+    if (err) {
+      next(err);
+    } else {
+      res.redirect("/auth/login");
+    }
+  });
 });
 
 module.exports = authRouter;

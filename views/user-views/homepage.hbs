@@ -1,0 +1,39 @@
+<h1>This is the homepage</h1>
+
+<nav>
+    <img src="" alt="logo">
+</nav>
+
+<div>
+    <ul>
+        <li>Learning</li>
+        <li>My Courses</li>
+        <li>Contact Us</li>
+        <li>My Account</li>
+    </ul>
+
+    <h3>What do you want to learn today?</h3>
+</div>
+
+<section id="topics">
+    <h2>Technologies</h2>
+    <p>Select a technology to see a list of all related courses</p>
+    {{#each courses}}
+    <button>{{this.technology}}</button>
+    {{/each}}
+</section>
+
+<section id="popular">
+    <h2>Popular Courses</h2>
+
+
+    <button>Join Course</button>
+
+</section>
+
+<section id="new-courses">
+    <h2>New Courses</h2>
+
+    <button>Join Course</button>
+
+</section>
