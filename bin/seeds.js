@@ -1,8 +1,7 @@
-const mongoose = require("mongoose");
-
-const Course = require("../models/course");
 require("dotenv").config();
 
+const mongoose = require("mongoose");
+const Course = require("../models/course");
 const courses = [
   {
     name: "Python for Everybody",
