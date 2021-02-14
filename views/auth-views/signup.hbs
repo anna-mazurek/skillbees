@@ -1,17 +1,32 @@
-<h2>Sign up page</h2>
+<section class="auth-view">
 
-<form action="/auth/signup" method="POST">
-<label for=""></label>
-<input type="text" name="fullname" placeholder="Fullname">
-<br>
-<label for=""></label>
-<input type="text" name="email" placeholder="Email">
-<br>
-<label for=""></label>
-<input type="password" name="password" placeholder="Password">
-<br>
-<button type="submit">Sign up</button>
+<div class="auth-box">
+
+    <form id="auth-form" action="/auth/signup" method="POST">
+    <p>SIGN UP</p>
+    <p>NEW TO SKILLBEES? SIGN UP FOR FREE</p>
+
+    <label for=""></label>
+    <input type="text" name="fullname" placeholder="Fullname">
+<br/>
+    <label for=""></label>
+    <input type="text" name="email" placeholder="Email">
+<br/>
+    <label for=""></label>
+    <input type="password" name="password" placeholder="Password">
+<br/>
+    <button class="auth-btn"type="submit">SIGN UP</button>
 </form>
+
+</div>
+
+<div class="welcome">
+    <h2>WELCOME TO SKILLBEES!</h2>
+</div>
+
+</section>
+
+
 
 
 {{#if errorMessage}}

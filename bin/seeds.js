@@ -120,7 +120,6 @@ const courses = [
     image: "",
     duration: "3 hours",
   },
-
   {
     name: "Server-side Development with NodeJS, Express and MongoDB",
     technology: "nodejs",
