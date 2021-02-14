@@ -1,8 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: #1c3e6c;
+  background-color: #34c3b8;
+  margin: 0 auto;
+}
+
+#logo {
+  width: 80px;
 }
 
 a {
-  color: #00B7FF;
+  color: #1c3e6c;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu li {
+  margin: 5px 20px 5px 20px;
+}
+
+.menu a {
+  font-size: 25px;
+}
+
+.topics {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.technology-button {
+  padding: 1.25rem 1rem;
+  font-size: 1rem;
+  width: 10rem;
+  background-color: #f8f4f4;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px #1c3e6c;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.join-button {
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  padding: 0.5rem 0.5rem;
+  width: 5rem;
+}
+
+.popular-courses {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.popular-courses img {
+  height: 75px;
+  width: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1c3e6c;
+  color: white;
+  text-align: center;
 }
