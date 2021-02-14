@@ -7,6 +7,8 @@ const courseSchema = new Schema({
   level: { type: String, enum: ["Beginner", "Intermediate", "Advanced"] },
   description: { type: String },
   link: { type: String },
+  image: { type: String },
+  duration: { type: String },
 });
 
 const Course = mongoose.model("Course", courseSchema);
