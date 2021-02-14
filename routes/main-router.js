@@ -1,5 +1,6 @@
 const express = require("express");
 const Course = require("../models/course");
+const User = require("../models/user");
 const mainRouter = express.Router();
 
 const { isLoggedIn } = require("./../utils/middleware");
@@ -24,7 +25,26 @@ mainRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
   const { technology } = req.params;
   const techLowercased = technology.toLowerCase();
   Course.find({ technology: techLowercased })
-    .then((courses) => res.render("user-views/technology-view"))
+    .then((courses) => {
+      const data = { courses: courses };
+      res.render("user-views/technology-view", data);
+    })
+    .catch((err) => console.log(err));
+});
+
+mainRouter.get("/favorites", isLoggedIn, (req, res, next) => {
+  res.render("user-views/favorites");
+});
+
+mainRouter.post("/:courseId/favorites", isLoggedIn, (req, res, next) => {
+  const courseId = req.params.courseId;
+  User.findByIdAndUpdate(req.session.currentUser)
+    .then((addedFavorite) => {
+      const data = {
+        favorites: addedFavorite,
+      };
+      res.redirect("/favorite", data);
+    })
     .catch((err) => console.log(err));
 });
 
