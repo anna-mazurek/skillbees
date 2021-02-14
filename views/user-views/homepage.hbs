@@ -37,9 +37,11 @@
 {{#each allCourses}}
 <form action="/user/{{this.id}}/favorites" method="POST">
 
-    <img src="" alt="course-logo">
+   
     <h4>{{this.technology}}</h4>
     <h5>{{this.name}}</h5>
+
+     <img src="" alt="course-logo">
     <button>Join</button>
 
 </form>
