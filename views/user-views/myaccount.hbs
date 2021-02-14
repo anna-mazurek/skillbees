@@ -1,4 +1,12 @@
 <h1>My Account</h1>
 
-<h2>{{user.fullname}}</h2>
-<h2>{{user.email}}</h2>
+
+<h2>{{oneUser.fullname}}</h2>
+<h2>{{oneUser.email}}</h2>
+
+ <form action='/user/{{user._id}}/delete' method='GET'>
+              <button class="delete-account" type='submit'>Delete my account</button>
+            </form>
+
+
+

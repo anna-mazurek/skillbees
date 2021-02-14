@@ -36,6 +36,7 @@ mainRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+//ADD COURSE
 mainRouter.post("/:courseId/favorites", isLoggedIn, async (req, res, next) => {
   try {
     const { courseId } = req.params;
@@ -49,12 +50,21 @@ mainRouter.post("/:courseId/favorites", isLoggedIn, async (req, res, next) => {
       { $push: { courses: courseId } },
       { new: true }
     );
+
+    //removing duplicates
+    // User.courses.find({ value: { $gt: 1 } }).forEach(function (course) {
+    //   var obj = User.courses.findOne({ media_hash: course._id });
+    //   User.courses.remove({ media_hash: course._id });
+    //   User.courses.insert(obj);
+    // });
+    //
     return res.redirect("/user/favorites");
   } catch (error) {
     console.log(error);
   }
 });
 
+//MY COURSES
 mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
   const user = await User.findById(userId).populate("courses");
@@ -62,6 +72,7 @@ mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
   res.render("user-views/favorites", data);
 });
 
+// REMOVE COURSE
 mainRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
   try {
     const { courseId } = req.params;
@@ -81,11 +92,22 @@ mainRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
   }
 });
 
+// MY ACCOUNT
 mainRouter.get("/account", isLoggedIn, async (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
   const user = await User.findById(userId);
   const data = { user };
   res.render("user-views/myaccount", data);
+});
+
+// DELETE	PROFILE
+mainRouter.get("/delete", isLoggedIn, function (req, res, next) {
+  const { _id: userId } = req.session.currentUser;
+  User.findById(userId)
+    .then((theUser) => theUser.remove())
+    .then(() => req.session.destroy())
+    .then(() => res.redirect("/auth/signup"))
+    .catch((err) => console.log(err));
 });
 
 module.exports = mainRouter;
