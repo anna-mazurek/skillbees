@@ -8,7 +8,8 @@ body {
 }
 
 #logo {
-  width: 80px;
+  width: 150px;
+  height: auto;
 }
 
 a {
@@ -70,7 +71,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 
 .popular-courses img {
@@ -86,4 +87,15 @@ a {
   background-color: #1c3e6c;
   color: white;
   text-align: center;
+  padding: 5px;
+}
+
+.footer img {
+  height: 20px;
+  width: auto;
+}
+
+.footer a {
+  color: white;
+  font-size: 13px;
 }
