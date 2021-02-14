@@ -4,6 +4,10 @@
 <h3>{{this.name}}</h3>
 <h4>{{this.description}}</h4>
 </div>
-<button action="/{{this._id}}/favorites" method="post" type="submit">Add to favorites</button>
+<form action="/user/{{this.id}}/favorites" method="POST">
+
+<button>Add to favorites</button>
+
+</form>
 
 {{/each}} 

@@ -49,6 +49,14 @@ mainRouter.post("/:courseId/favorites", isLoggedIn, async (req, res, next) => {
       { $push: { courses: courseId } },
       { new: true }
     );
+
+    //removing duplicates
+    // User.courses.find({ value: { $gt: 1 } }).forEach(function (course) {
+    //   var obj = User.courses.findOne({ media_hash: course._id });
+    //   User.courses.remove({ media_hash: course._id });
+    //   User.courses.insert(obj);
+    // });
+    //
     return res.redirect("/user/favorites");
   } catch (error) {
     console.log(error);
@@ -63,7 +71,26 @@ mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
 });
 
 mainRouter.get("/account", isLoggedIn, (req, res, next) => {
-  res.render("user-views/myaccount");
+  const { _id: userId } = req.session.currentUser;
+  User.findById(userId)
+    .then((oneUser) => {
+      const data = {
+        oneUser: oneUser,
+      };
+
+      res.render("user-views/myaccount", data);
+    })
+    .catch((err) => console.log(err));
+});
+
+// DELETE	PROFILE
+mainRouter.get("/delete", isLoggedIn, function (req, res, next) {
+  const { _id: userId } = req.session.currentUser;
+  User.findById(userId)
+    .then((theUser) => theUser.remove())
+    .then(() => req.session.destroy())
+    .then(() => res.redirect("/auth/signup"))
+    .catch((err) => console.log(err));
 });
 
 module.exports = mainRouter;
