@@ -1,13 +1,28 @@
+<div class="btn-course">
+<a href="/user"><button class="course-btn">Back to homepage</button></a>
+</div>
+
+<section id="course-list">
 {{#each courses}}
 
-<div>
-<h3>{{this.name}}</h3>
-<h4>{{this.description}}</h4>
+<div id="course-details">
+
+<div class="img">
+<img class="course-img" src="{{this.image}}" alt="course-img">
+
 </div>
+
+<h4>{{this.name}}</h4>
+<h4>Duration: {{this.duration}}</h4>
+<p>{{this.description}}</p>
+
 <form action="/user/{{this.id}}/favorites" method="POST">
 
-<button>Add to favorites</button>
+<button class="add-btn">Add to favorites</button>
 
 </form>
 
+</div>
+
 {{/each}} 
+</section>
