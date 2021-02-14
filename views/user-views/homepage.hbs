@@ -37,7 +37,7 @@
 {{#each allCourses}}
 <form action="/user/{{this.id}}/favorites" method="POST">
 
-   
+   <img src="{{this.image}}" alt="">
     <h4>{{this.technology}}</h4>
     <h5>{{this.name}}</h5>
 
@@ -48,31 +48,5 @@
 {{/each}}
 </section>
 
-<section id="new-courses">
-    <h2>New Courses</h2>
 
-<div>
-    <img src="" alt="course-logo">
-    <h4>R</h4>
-    <h5>Advanced R Programming</h5>
-    <a href="/user/:courseId/favorites"><button>Join</button></a>
-</div>
-<div>
-    <img src="" alt="course-logo">
-    <h4>HTML/CSS</h4>
-    <h5>HTML5 and CSS3 - Learn to build responsive websites</h5>
-    <a href="/user/:courseId/favorites"><button>Join</button></a>
-</div>
-<div>
-    <img src="" alt="course-logo">
-    <h4>React.js</h4>
-    <h5>Javascript frameworks - React.js for beginners</h5>
-    <a href="/user/:courseId/favorites"><button>Join</button></a>
-</div>
-<div>
-    <img src="" alt="course-logo">
-    <h4>JavaScript</h4>
-    <h5>Advanced Javascript</h5>
-    <a href="/user/:courseId/favorites"><button>Join</button></a>
-</div>
 </section>
