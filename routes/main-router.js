@@ -6,7 +6,8 @@ const mainRouter = express.Router();
 const { isLoggedIn } = require("./../utils/middleware");
 
 mainRouter.get("/", isLoggedIn, (req, res, next) => {
-  Course.find({}, { limit: 5 })
+  Course.find({})
+    .limit(4)
     .then((allCourses) => {
       const data = { allCourses };
       res.render("user-views/homepage", data);
