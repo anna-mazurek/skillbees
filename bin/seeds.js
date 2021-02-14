@@ -5,7 +5,7 @@ const Course = require("../models/course");
 const courses = [
   {
     name: "Python for Everybody",
-    technology: "Python",
+    technology: "python",
     level: "Beginner",
     description:
       "This course covers fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the course to design and create your own  applications for data retrieval, processing, and visualization.",
@@ -15,7 +15,7 @@ const courses = [
 
   {
     name: "Learn Python 3 from Scratch",
-    technology: "Python",
+    technology: "python",
     level: "Beginner",
     description:
       "The course begins by exploring the basic building blocks before moving on to higher-level concepts such as functions and loops. Fun quizzes and coding challenges will accompany you along the way to help enforce all the concepts covered in the course. By the time you're done, you'll have the skills you need to create your own basic applications in Python 3.",
@@ -25,7 +25,7 @@ const courses = [
 
   {
     name: "Python 201 - Interactively Learn Advanced Concepts in Python 3",
-    technology: "Python",
+    technology: "python",
     level: "Advanced",
     description:
       "The course covers intermediate and advanced level materials. Topics include intermediate modules, unicode, generators, iterators, web related tasks with Python, testing code.",
@@ -35,7 +35,7 @@ const courses = [
 
   {
     name: "Learn SQL Basics for Data Science",
-    technology: "SQL",
+    technology: "sql",
     level: "Beginner",
     description:
       "The course is intended for a learner with no previous coding experience seeking to develop SQL query fluency. Through four progressively more difficult SQL projects with data science applications, you will cover topics such as SQL basics, data wrangling, SQL analysis, AB testing, distributed computing using Apache Spark, and more. These topics will prepare you to apply SQL creatively to analyze and explore data; demonstrate efficiency in writing queries; create data analysis datasets; conduct feature engineering, use SQL with other data analysis and machine learning toolsets; and use SQL with unstructured data sets. ",
@@ -45,7 +45,7 @@ const courses = [
 
   {
     name: "Learn SQL",
-    technology: "SQL",
+    technology: "sql",
     level: "Beginner",
     description:
       "In this course, you’ll learn how to communicate with relational databases through SQL. You’ll learn—and practice with 4 projects—how to manipulate data and build queries that communicate with more than one table.",
@@ -54,7 +54,7 @@ const courses = [
 
   {
     name: "Advanced Databases and SQL Querying",
-    technology: "SQL",
+    technology: "sql",
     level: "Advanced",
     description:
       "This course is an advanced TSQL Querying course. The course expects that students are already aware of basic database concepts and are comfortable writing basic TSQL queries like SELECT, JOINS etc. This course cover advanced concepts like Views, Triggers, Dynamic Queries etc. The TSQL Scripts for all demos are uploaded.",
@@ -64,7 +64,7 @@ const courses = [
 
   {
     name: "Data Science: R Basics",
-    technology: "R",
+    technology: "r",
     level: "Beginner",
     description:
       "This course will introduce you to the basics of R programming. You can better retain R when you learn it to solve a specific problem, so you’ll use a real-world dataset about crime in the United States. You will learn the R skills needed to answer essential questions about differences in crime across the different states. We’ll cover R's functions and data types, then tackle how to operate on vectors and when to use advanced functions like sorting. You’ll learn how to apply general programming features like “if-else,” and “for loop” commands, and how to wrangle, analyze and visualize data.",
@@ -74,7 +74,7 @@ const courses = [
 
   {
     name: "Statistics and R",
-    technology: "R",
+    technology: "r",
     level: "Beginner",
     description:
       "This course teaches the R programming language in the context of statistical data and statistical analysis in the life sciences. We will learn the basics of statistical inference in order to understand and compute p-values and confidence intervals, all while analyzing data with R code. We provide R programming examples in a way that will help make the connection between concepts and implementation. Problem sets requiring R programming will be used to test understanding and ability to implement basic data analyses. We will use visualization techniques to explore new data sets and determine the most appropriate approach. We will describe robust statistical techniques as alternatives when data do not fit assumptions required by the standard approaches. By using R scripts to analyze data, you will learn the basics of conducting reproducible research.",
@@ -83,7 +83,7 @@ const courses = [
 
   {
     name: "Advanced R Programming",
-    technology: "R",
+    technology: "r",
     level: "Advanced",
     description:
       "This course covers advanced topics in R programming that are necessary for developing powerful, robust, and reusable data science tools. Topics covered include functional programming in R, robust error handling, object oriented programming, profiling and benchmarking, debugging, and proper design of functions. Upon completing this course you will be able to identify and abstract common data analysis tasks and to encapsulate them in user-facing functions. ",
@@ -93,7 +93,7 @@ const courses = [
 
   {
     name: "Node JS API Development for Beginners",
-    technology: "NodeJS",
+    technology: "nodejs",
     level: "Beginner",
     description:
       "In this course, you will learn Modern JavaScript, Node JS event loop, Asynchronous programming, using node modules, npm modules and creating your own modules, creating server, connect to database and sending json responses.",
@@ -103,7 +103,7 @@ const courses = [
 
   {
     name: "Server-side Development with NodeJS, Express and MongoDB",
-    technology: "NodeJS",
+    technology: "nodejs",
     level: "Intermediate",
     description:
       "This course deals with all things server-side. We base the entire course around the NodeJS platform. We start with a brief overview of the Web protocols: HTTP and HTTPS. We examine NodeJS and NodeJS modules: Express for building web servers. On the database side, we review basic CRUD operations, NoSQL databases, in particular MongoDB and Mongoose for accessing MongoDB from NodeJS. We examine the REST concepts and building a RESTful API. We touch upon authentication and security. Finally we review backend as a service (BaaS) approaches, including mobile BaaS, both open-source and commercial BaaS services.",
@@ -112,14 +112,14 @@ const courses = [
   },
   {
     name: "Intro to JavaScript",
-    technology: "JavaScript",
+    technology: "javascript",
     level: "Beginner",
     description: "Complete guide to help you go from novice to coding ninja!",
     link: "",
   },
   {
     name: "JavaScript - Advanced Concepts",
-    technology: "JavaScript",
+    technology: "javascript",
     level: "Intermediate",
     description:
       "By the end of this course, you'll be able to answer one of codings biggest questions - what is this?",
@@ -127,7 +127,7 @@ const courses = [
   },
   {
     name: "The JS MasterClass",
-    technology: "JavaScript",
+    technology: "javascript",
     level: "Advanced",
     description:
       "All the advanced concepts you need to know to become confident in JS",
@@ -135,7 +135,7 @@ const courses = [
   },
   {
     name: "HTML5 from 0",
-    technology: "HTML",
+    technology: "html",
     level: "Beginner",
     description:
       "If you've had no previous experience this is the course for you. Taking you from the very basics to understand HTML5.",
@@ -143,7 +143,7 @@ const courses = [
   },
   {
     name: "HTML5 & CSS3 - Learn to build responsive websites",
-    technology: "HTML",
+    technology: "html",
     level: "Intermediate",
     description:
       "A step by step, detailed course to help you build your first website",
@@ -151,7 +151,7 @@ const courses = [
   },
   {
     name: "Introduction to CSS & HTML",
-    technology: "CSS",
+    technology: "css",
     level: "Beginner",
     description:
       "The perfect course for beginners. To give you basic concepts to build a web page  ",
@@ -159,21 +159,21 @@ const courses = [
   },
   {
     name: "Advanced CSS - Flexbox, gradients and more",
-    technology: "CSS",
+    technology: "css",
     level: "Advanced",
     description: "Learn some of the more advanced topics in CSS.",
     link: "",
   },
   {
     name: "DOM",
-    technology: "JavaScript",
+    technology: "javascript",
     level: "Advanced",
     description: "The worst concept made bearable",
     link: "",
   },
   {
     name: "Redux, react hooks and GraphQL",
-    technology: "React",
+    technology: "react",
     level: "Advanced",
     description:
       "Join this advanved course and learn how to implement redux using react hooks and GraphQL",
@@ -181,7 +181,7 @@ const courses = [
   },
   {
     name: "Javascript frameworks - Complete guide to Reach.js",
-    technology: "React",
+    technology: "react",
     level: "Beginner",
     description: "All you'll need to know to get you started with React.js",
     link: "",

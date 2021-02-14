@@ -49,17 +49,17 @@ mainRouter.post("/:courseId/favorites", isLoggedIn, async (req, res, next) => {
       { $push: { courses: courseId } },
       { new: true }
     );
-    return res.redirect("/user/mycourses");
+    return res.redirect("/user/favorites");
   } catch (error) {
     console.log(error);
   }
 });
 
-mainRouter.get("/mycourses", isLoggedIn, async (req, res, next) => {
+mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
   const user = await User.findById(userId).populate("courses");
   const data = { courses: user.courses };
-  res.render("user-views/mycourses", data);
+  res.render("user-views/favorites", data);
 });
 
 mainRouter.get("/account", isLoggedIn, (req, res, next) => {
