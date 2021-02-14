@@ -3,9 +3,14 @@
 
 {{#each courses}}
 
+<form action="/user/{{this.id}}/remove" method="POST">
+
 <h2>{{this.name}}</h2>
 <h2>{{this.description}}</h2>
 <h2>{{this.link}}</h2>
 
-{{/each}}
+<button>Remove</button>
+</form>
 
+
+{{/each}}

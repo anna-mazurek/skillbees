@@ -62,8 +62,30 @@ mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
   res.render("user-views/favorites", data);
 });
 
-mainRouter.get("/account", isLoggedIn, (req, res, next) => {
-  res.render("user-views/myaccount");
+mainRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
+  try {
+    const { courseId } = req.params;
+    const { _id: userId } = req.session.currentUser;
+    const courseExists = await Course.findById(courseId);
+    if (!courseExists) {
+      return console.log("Handle error here");
+    }
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { $pull: { courses: courseId } },
+      { new: true }
+    );
+    return res.redirect("/user/favorites");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+mainRouter.get("/account", isLoggedIn, async (req, res, next) => {
+  const { _id: userId } = req.session.currentUser;
+  const user = await User.findById(userId);
+  const data = { user };
+  res.render("user-views/myaccount", data);
 });
 
 module.exports = mainRouter;
