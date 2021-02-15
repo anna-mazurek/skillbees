@@ -11,7 +11,7 @@ body {
   width: 170px;
 }
 
-nav {
+header {
   display: flex;
   justify-content: center;
 }
@@ -146,11 +146,6 @@ input {
   border: none;
 }
 
-p {
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
 .welcome {
   background-color: white;
   width: 500px;
@@ -166,6 +161,7 @@ p {
   height: 25px;
   width: 120px;
   border: none;
+  margin-top: 40px;
 }
 
 .course-btn {
@@ -218,4 +214,23 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.course-desc {
+  overflow: hidden;
+  max-height: 3.6em;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.show-more::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+.show-more::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.show-more {
+  overflow: auto;
 }

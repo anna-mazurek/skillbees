@@ -6,15 +6,14 @@
 {{#each courses}}
 
 <div id="course-details">
-
 <div class="img">
 <img class="course-img" src="{{this.image}}" alt="course-img">
-
 </div>
 
 <h4>{{this.name}}</h4>
 <h4>Duration: {{this.duration}}</h4>
-<p>{{this.description}}</p>
+<p class="course-desc">{{this.description}}</p>
+
 
 <form action="/user/{{this.id}}/favorites" method="POST">
 
@@ -22,7 +21,14 @@
 
 </form>
 
+<button onclick="seeMore()">See more</button>
 </div>
-
 {{/each}} 
 </section>
+
+<script>
+function seeMore() {
+   const element = document.querySelector(".course-desc");
+   element.classList.toggle("show-more");
+}
+</script>

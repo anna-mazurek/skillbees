@@ -10,7 +10,6 @@ const hbs = require("hbs");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth-router");
 const mainRouter = require("./routes/main-router");
 const { isLoggedIn, isDuplicate } = require("./utils/middleware");
@@ -52,8 +51,8 @@ app.use(
     }),
   })
 );
-app.use("/", indexRouter);
-app.use("/auth", authRouter);
+
+app.use("/", authRouter);
 app.use("/user", mainRouter);
 
 // catch 404 and forward to error handler

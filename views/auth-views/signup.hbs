@@ -2,7 +2,7 @@
 
 <div class="auth-box">
 
-    <form id="auth-form" action="/auth/signup" method="POST">
+    <form id="auth-form" action="/" method="POST">
     <p>SIGN UP</p>
     <p>NEW TO SKILLBEES? SIGN UP FOR FREE</p>
 
@@ -10,13 +10,19 @@
     <input type="text" name="fullname" placeholder="Fullname">
 <br/>
     <label for=""></label>
-    <input type="text" name="email" placeholder="Email">
+    <input type="email" name="email" placeholder="Email">
 <br/>
     <label for=""></label>
     <input type="password" name="password" placeholder="Password">
 <br/>
     <button class="auth-btn"type="submit">SIGN UP</button>
 </form>
+
+<div>
+
+<p>Already a user?</p>
+<a id="log-btn" href="/login"><button>LOGIN</button></a>
+</div>
 
 </div>
 

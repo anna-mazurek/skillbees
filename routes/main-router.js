@@ -104,8 +104,7 @@ mainRouter.get("/delete", isLoggedIn, function (req, res, next) {
   User.findById(userId)
     .then((theUser) => theUser.remove())
     .then(() => req.session.destroy())
-    .then(() => res.redirect("/auth/signup"))
-    .catch((err) => console.log(err));
+    .then(() => res.redirect("/"));
 });
 
 module.exports = mainRouter;

@@ -5,10 +5,10 @@ const bcrypt = require("bcrypt");
 const zxcvbn = require("zxcvbn");
 const saltRounds = 10;
 
-authRouter.get("/signup", (req, res, next) => {
+authRouter.get("/", (req, res, next) => {
   res.render("auth-views/signup");
 });
-authRouter.post("/signup", (req, res, next) => {
+authRouter.post("/", (req, res, next) => {
   const { fullname, email, password } = req.body;
   if (fullname === "" || email === "" || password === "") {
     res.render("auth-views/signup", {
@@ -88,7 +88,7 @@ authRouter.get("/logout", (req, res, next) => {
     if (err) {
       next(err);
     } else {
-      res.redirect("/auth/login");
+      res.redirect("/login");
     }
   });
 });
