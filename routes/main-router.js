@@ -3,7 +3,7 @@ const Course = require("../models/course");
 const User = require("../models/user");
 const mainRouter = express.Router();
 
-const { isLoggedIn } = require("./../utils/middleware");
+const { isLoggedIn, isDuplicate } = require("./../utils/middleware");
 
 mainRouter.get("/", isLoggedIn, (req, res, next) => {
   Course.find({})
@@ -38,32 +38,29 @@ mainRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
 });
 
 //ADD COURSE
-mainRouter.post("/:courseId/favorites", isLoggedIn, async (req, res, next) => {
-  try {
-    const { courseId } = req.params;
-    const { _id: userId } = req.session.currentUser;
-    const courseExists = await Course.findById(courseId);
-    if (!courseExists) {
-      return console.log("Handle error here");
+mainRouter.post(
+  "/:courseId/favorites",
+  isLoggedIn,
+  isDuplicate,
+  async (req, res, next) => {
+    try {
+      const { courseId } = req.params;
+      const { _id: userId } = req.session.currentUser;
+      const courseExists = await Course.findById(courseId);
+      if (!courseExists) {
+        return console.log("Handle error here");
+      }
+      const user = await User.findByIdAndUpdate(
+        userId,
+        { $push: { courses: courseId } },
+        { new: true }
+      );
+      return res.redirect("/user/favorites");
+    } catch (error) {
+      console.log(error);
     }
-    const user = await User.findByIdAndUpdate(
-      userId,
-      { $push: { courses: courseId } },
-      { new: true }
-    );
-
-    //removing duplicates
-    // User.courses.find({ value: { $gt: 1 } }).forEach(function (course) {
-    //   var obj = User.courses.findOne({ media_hash: course._id });
-    //   User.courses.remove({ media_hash: course._id });
-    //   User.courses.insert(obj);
-    // });
-    //
-    return res.redirect("/user/favorites");
-  } catch (error) {
-    console.log(error);
   }
-});
+);
 
 //MY COURSES
 mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
