@@ -1,6 +1,11 @@
-<h1>My Courses</h1>
+<section class="favorites">
 
-<a href="/user">Back to homepage</a>
+<h1>My Courses</h1>
+{{!-- <a href="/user">Back to homepage</a> --}}
+
+<div class="favorites-course-list">
+
+
 
 
 {{#each courses}}
@@ -11,10 +16,17 @@
 <img class="course-img" src="{{this.image}}" alt="course-img">
 </a>
 </div>
+<div class="favorites-description">
 <h2>{{this.name}}</h2>
-<h2>{{this.description}}</h2>
+<p>{{this.description}}</p>
+</div>
 <button class="remove-btn">Remove</button>
 </form>
+<hr>
 
 
 {{/each}}
+
+</div>
+</section>
+
