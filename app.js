@@ -17,7 +17,7 @@ const { isLoggedIn, isDuplicate } = require("./utils/middleware");
 var app = express();
 
 mongoose
-  .connect(`mongodb://localhost/${process.env.DB_NAME}`, {
+  .connect(`${process.env.MONGODB_URI}`, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
