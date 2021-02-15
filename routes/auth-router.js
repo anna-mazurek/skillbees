@@ -44,9 +44,10 @@ authRouter.post("/", (req, res, next) => {
           res.redirect("/user");
         })
         .catch((err) => {
-          res.render("auth-views/signup", {
-            errorMessage: "There was an error try again!",
-          });
+          // res.render("auth-views/signup", {
+          //   errorMessage: "There was an error try again!",
+          // });
+          next(err);
         });
     })
     .catch((err) => next(err));
