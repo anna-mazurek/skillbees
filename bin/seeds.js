@@ -9,14 +9,13 @@ const courses = [
     technology: "python",
     level: "Beginner",
     description:
-      "This course covers fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the course to design and create your own  applications for data retrieval, processing, and visualization.",
+      "This course covers fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you'll use the technologies learned throughout the course to design and create your own  applications for data retrieval, processing, and visualization.",
     link:
       "https://www.coursera.org/specializations/python?ranMID=40328&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-08NE0mrNRIAtO8Q6lLWSdA&siteID=JVFxdTr9V80-08NE0mrNRIAtO8Q6lLWSdA",
     image:
       "https://res.cloudinary.com/skillbees/image/upload/v1613469740/images/python_rm6wqd.jpg",
     duration: "3 hours/week - approx. 8 months to complete",
   },
-
   {
     name: "Learn Python 3 from Scratch",
     technology: "python",
@@ -29,7 +28,6 @@ const courses = [
       "https://res.cloudinary.com/skillbees/image/upload/v1613469740/images/python_rm6wqd.jpg",
     duration: "10 hours",
   },
-
   {
     name: "Python 201 - Interactively Learn Advanced Concepts in Python 3",
     technology: "python",
@@ -42,7 +40,6 @@ const courses = [
       "https://res.cloudinary.com/skillbees/image/upload/v1613469740/images/python_rm6wqd.jpg",
     duration: "11 hours",
   },
-
   {
     name: "Learn SQL Basics for Data Science",
     technology: "sql",
@@ -55,19 +52,17 @@ const courses = [
       "https://res.cloudinary.com/skillbees/image/upload/v1613469736/images/sql_cxebql.jpg",
     duration: "5 hours/week - approx. 4 months to complete",
   },
-
   {
     name: "Learn SQL",
     technology: "sql",
     level: "Beginner",
     description:
-      "In this course, you’ll learn how to communicate with relational databases through SQL. You’ll learn—and practice with 4 projects—how to manipulate data and build queries that communicate with more than one table.",
+      "In this course, you'll learn how to communicate with relational databases through SQL. You'll learn—and practice with 4 projects—how to manipulate data and build queries that communicate with more than one table.",
     link: "https://www.codecademy.com/learn/learn-sql",
     image:
       "https://res.cloudinary.com/skillbees/image/upload/v1613469736/images/sql_cxebql.jpg",
     duration: "8 hours",
   },
-
   {
     name: "Advanced Databases and SQL Querying",
     technology: "sql",
@@ -80,20 +75,18 @@ const courses = [
       "https://res.cloudinary.com/skillbees/image/upload/v1613469736/images/sql_cxebql.jpg",
     duration: "3 hours",
   },
-
   {
     name: "Data Science: R Basics",
     technology: "r",
     level: "Beginner",
     description:
-      "This course will introduce you to the basics of R programming. You can better retain R when you learn it to solve a specific problem, so you’ll use a real-world dataset about crime in the United States. You will learn the R skills needed to answer essential questions about differences in crime across the different states. We’ll cover R's functions and data types, then tackle how to operate on vectors and when to use advanced functions like sorting. You’ll learn how to apply general programming features like “if-else,” and “for loop” commands, and how to wrangle, analyze and visualize data.",
+      "This course will introduce you to the basics of R programming. You can better retain R when you learn it to solve a specific problem, so you'll use a real-world dataset about crime in the United States. You will learn the R skills needed to answer essential questions about differences in crime across the different states. We'll cover R's functions and data types, then tackle how to operate on vectors and when to use advanced functions like sorting. You'll learn how to apply general programming features like 'if-else' and 'for loop' commands, and how to wrangle, analyze and visualize data.",
     link:
       "https://online-learning.harvard.edu/course/data-science-r-basics?delta=2",
     image:
       "https://res.cloudinary.com/skillbees/image/upload/v1613469742/images/r_y3nnm4.jpg",
     duration: "1-2 hours/week - approx. 8 weeks to complete",
   },
-
   {
     name: "Statistics and R",
     technology: "r",
@@ -105,7 +98,6 @@ const courses = [
       "https://res.cloudinary.com/skillbees/image/upload/v1613469742/images/r_y3nnm4.jpg",
     duration: "2-4 hours/week - approx. 4 weeks to complete",
   },
-
   {
     name: "Advanced R Programming",
     technology: "r",
@@ -118,7 +110,6 @@ const courses = [
       "https://res.cloudinary.com/skillbees/image/upload/v1613469742/images/r_y3nnm4.jpg",
     duration: "18 hours",
   },
-
   {
     name: "Node JS API Development for Beginners",
     technology: "nodejs",
