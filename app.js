@@ -12,7 +12,8 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
 const authRouter = require("./routes/auth-router");
-const mainRouter = require("./routes/main-router");
+const userRouter = require("./routes/user-router");
+const teacherRouter = require("./routes/teacher-router");
 const { isLoggedIn, isDuplicate } = require("./utils/middleware");
 
 var app = express();
@@ -54,7 +55,8 @@ app.use(
 );
 
 app.use("/", authRouter);
-app.use("/user", mainRouter);
+app.use("/user", userRouter);
+app.use("/teacher", teacherRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

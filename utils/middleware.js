@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Teacher = require("../models/teacher");
 
 function isLoggedIn(req, res, next) {
   if (req.session.currentUser) {
