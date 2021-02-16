@@ -79,7 +79,7 @@ const courses = [
     technology: "r",
     level: "Beginner",
     description:
-      "This course will introduce you to the basics of R programming. You can better retain R when you learn it to solve a specific problem, so you'll use a real-world dataset about crime in the United States. You will learn the R skills needed to answer essential questions about differences in crime across the different states. We'll cover R's functions and data types, then tackle how to operate on vectors and when to use advanced functions like sorting. You'll learn how to apply general programming features like "if-else," and "for loop" commands, and how to wrangle, analyze and visualize data.",
+      "This course will introduce you to the basics of R programming. You can better retain R when you learn it to solve a specific problem, so you'll use a real-world dataset about crime in the United States. You will learn the R skills needed to answer essential questions about differences in crime across the different states. We'll cover R's functions and data types, then tackle how to operate on vectors and when to use advanced functions like sorting. You'll learn how to apply general programming features like 'if-else' and 'for loop' commands, and how to wrangle, analyze and visualize data.",
     link:
       "https://online-learning.harvard.edu/course/data-science-r-basics?delta=2",
     image:
