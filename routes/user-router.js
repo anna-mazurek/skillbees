@@ -1,11 +1,11 @@
 const express = require("express");
 const Course = require("../models/course");
 const User = require("../models/user");
-const mainRouter = express.Router();
+const userRouter = express.Router();
 
-const { isLoggedIn, isDuplicate } = require("./../utils/middleware");
+const { isLoggedIn, isDuplicate } = require("../utils/middleware");
 
-mainRouter.get("/", isLoggedIn, (req, res, next) => {
+userRouter.get("/", isLoggedIn, (req, res, next) => {
   Course.find({})
     .limit(4)
     .then((allCourses) => {
@@ -15,7 +15,7 @@ mainRouter.get("/", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-mainRouter.get("/courses", isLoggedIn, (req, res, next) => {
+userRouter.get("/courses", isLoggedIn, (req, res, next) => {
   Course.find()
     .then((allCourses) => {
       const data = {
@@ -26,7 +26,7 @@ mainRouter.get("/courses", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-mainRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
+userRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
   const { technology } = req.params;
   const techLowercased = technology.toLowerCase();
   Course.find({ technology: techLowercased })
@@ -38,7 +38,7 @@ mainRouter.get("/courses/:technology", isLoggedIn, (req, res, next) => {
 });
 
 //ADD COURSE
-mainRouter.post(
+userRouter.post(
   "/:courseId/favorites",
   isLoggedIn,
   isDuplicate,
@@ -63,7 +63,7 @@ mainRouter.post(
 );
 
 //MY COURSES
-mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
+userRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
   const user = await User.findById(userId).populate("courses");
   const data = { courses: user.courses };
@@ -71,7 +71,7 @@ mainRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
 });
 
 // REMOVE COURSE
-mainRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
+userRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
   try {
     const { courseId } = req.params;
     const { _id: userId } = req.session.currentUser;
@@ -91,7 +91,7 @@ mainRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
 });
 
 // MY ACCOUNT
-mainRouter.get("/account", isLoggedIn, async (req, res, next) => {
+userRouter.get("/account", isLoggedIn, async (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
   const user = await User.findById(userId);
   const data = { user };
@@ -99,7 +99,7 @@ mainRouter.get("/account", isLoggedIn, async (req, res, next) => {
 });
 
 // DELETE	PROFILE
-mainRouter.get("/delete", isLoggedIn, function (req, res, next) {
+userRouter.get("/delete", isLoggedIn, function (req, res, next) {
   const { _id: userId } = req.session.currentUser;
   User.findById(userId)
     .then((theUser) => theUser.remove())
@@ -107,4 +107,5 @@ mainRouter.get("/delete", isLoggedIn, function (req, res, next) {
     .then(() => res.redirect("/"));
 });
 
-module.exports = mainRouter;
+module.exports = userRouter;
+

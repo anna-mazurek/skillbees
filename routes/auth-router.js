@@ -60,7 +60,9 @@ authRouter.get("/login", (req, res, next) => {
 authRouter.post("/login", (req, res, next) => {
   const { email, password } = req.body;
   if (email === "" || password === "") {
-    res.render("auth-views/login", { errorMessage: "BYYYYEEEEE" });
+    res.render("auth-views/login", {
+      errorMessage: "Please enter all your details",
+    });
     return;
   }
 

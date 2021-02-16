@@ -46,7 +46,12 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  width: 80%;
+}
+
+#tech-list {
+  display: flex;
+  justify-content: center;
 }
 
 .technology-button {
@@ -63,7 +68,7 @@ a {
 
 .join-button {
   border-radius: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: none;
   padding: 0.5rem 0.5rem;
   width: 5rem;
@@ -83,9 +88,6 @@ a {
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: #1c3e6c;
   color: white;
@@ -102,6 +104,15 @@ a {
   color: white;
   font-size: 13px;
   color: #00b7ff;
+}
+
+.contact {
+  width: 200px;
+  text-align: center;
+}
+
+footer h3 {
+  font-weight: bold;
 }
 
 .auth-view {

@@ -1,4 +1,5 @@
 require("dotenv").config();
+// const fileUploader = require("../configs/cloudinary.config");
 
 const mongoose = require("mongoose");
 const Course = require("../models/course");
