@@ -1,4 +1,5 @@
 require("dotenv").config();
+// const fileUploader = require("../configs/cloudinary.config");
 
 const mongoose = require("mongoose");
 const Course = require("../models/course");
@@ -12,7 +13,7 @@ const courses = [
     link:
       "https://www.coursera.org/specializations/python?ranMID=40328&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-08NE0mrNRIAtO8Q6lLWSdA&siteID=JVFxdTr9V80-08NE0mrNRIAtO8Q6lLWSdA",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469740/images/python_rm6wqd.jpg",
     duration: "3 hours/week - approx. 8 months to complete",
   },
 
@@ -25,7 +26,7 @@ const courses = [
     link:
       "https://www.educative.io/courses/learn-python-3-from-scratch?affiliate_id=5073518643380224",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469740/images/python_rm6wqd.jpg",
     duration: "10 hours",
   },
 
@@ -38,7 +39,7 @@ const courses = [
     link:
       "https://www.educative.io/courses/python-201-interactively-learn-advanced-concepts-in-python-3?affiliate_id=5073518643380224",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469740/images/python_rm6wqd.jpg",
     duration: "11 hours",
   },
 
@@ -51,7 +52,7 @@ const courses = [
     link:
       "https://www.coursera.org/specializations/learn-sql-basics-data-science",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469736/images/sql_cxebql.jpg",
     duration: "5 hours/week - approx. 4 months to complete",
   },
 
@@ -63,7 +64,7 @@ const courses = [
       "In this course, you’ll learn how to communicate with relational databases through SQL. You’ll learn—and practice with 4 projects—how to manipulate data and build queries that communicate with more than one table.",
     link: "https://www.codecademy.com/learn/learn-sql",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469736/images/sql_cxebql.jpg",
     duration: "8 hours",
   },
 
@@ -76,7 +77,7 @@ const courses = [
     link:
       "https://www.udemy.com/course/advanced-tsql-querying-using-sql-2014/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-YDojMBgbFGqrmD5Fn4Bb7A&utm_medium=udemyads&utm_source=aff-campaign",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469736/images/sql_cxebql.jpg",
     duration: "3 hours",
   },
 
@@ -89,7 +90,7 @@ const courses = [
     link:
       "https://online-learning.harvard.edu/course/data-science-r-basics?delta=2",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469742/images/r_y3nnm4.jpg",
     duration: "1-2 hours/week - approx. 8 weeks to complete",
   },
 
@@ -101,7 +102,7 @@ const courses = [
       "This course teaches the R programming language in the context of statistical data and statistical analysis in the life sciences. We will learn the basics of statistical inference in order to understand and compute p-values and confidence intervals, all while analyzing data with R code. We provide R programming examples in a way that will help make the connection between concepts and implementation. Problem sets requiring R programming will be used to test understanding and ability to implement basic data analyses. We will use visualization techniques to explore new data sets and determine the most appropriate approach. We will describe robust statistical techniques as alternatives when data do not fit assumptions required by the standard approaches. By using R scripts to analyze data, you will learn the basics of conducting reproducible research.",
     link: "https://online-learning.harvard.edu/course/statistics-and-r?delta=0",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469742/images/r_y3nnm4.jpg",
     duration: "2-4 hours/week - approx. 4 weeks to complete",
   },
 
@@ -114,7 +115,7 @@ const courses = [
     link:
       "https://www.coursera.org/learn/advanced-r?ranMID=40328&ranEAID=SAyYsTvLiGQ&ranSiteID=SAyYsTvLiGQ-qUiA4QmMQVz7AOB9dI79cg&siteID=SAyYsTvLiGQ-qUiA4QmMQVz7AOB9dI79cg",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469742/images/r_y3nnm4.jpg",
     duration: "18 hours",
   },
 
@@ -127,7 +128,7 @@ const courses = [
     link:
       "https://www.udemy.com/course/node-js-api-tutorial/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-my.Aj6zwM612JXRDtu8STA",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469732/images/nodejs_sh1svf.png",
     duration: "3 hours",
   },
   {
@@ -139,7 +140,7 @@ const courses = [
     link:
       "https://www.coursera.org/learn/server-side-nodejs?ranMID=40328&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-yuHJBeXJeU0_yc8oQYDEMw&siteID=JVFxdTr9V80-yuHJBeXJeU0_yc8oQYDEMw",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469732/images/nodejs_sh1svf.png",
     duration: "48 hours",
   },
   {
@@ -150,7 +151,7 @@ const courses = [
     link:
       "https://www.udemy.com/course/the_complete_javascript_course_for_beginners/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469730/images/javascript_ln3knc.png",
     duration: "1hr 6mins",
   },
   {
@@ -162,7 +163,7 @@ const courses = [
     link:
       "https://www.udemy.com/course/advanced-and-object-oriented-javascript/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469730/images/javascript_ln3knc.png",
     duration: "5hr 24min",
   },
   {
@@ -173,7 +174,7 @@ const courses = [
       "This course teaches you everything you need to build your first project.",
     link: "https://www.udemy.com/course/javascript-essentials/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469730/images/javascript_ln3knc.png",
     duration: "6hr 30min",
   },
   {
@@ -184,7 +185,7 @@ const courses = [
       "If you've had no previous experience this is the course for you. Taking you from the very basics step by step to be able to create your very first project.",
     link: "https://www.udemy.com/course/hmtl5-training/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469728/images/html_lqpjj3.jpg",
     duration: "2hr 39min",
   },
   {
@@ -195,7 +196,7 @@ const courses = [
       "A step by step, detailed course to help you build your first website",
     link: "https://www.udemy.com/course/learn-to-code-in-html-and-css/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469728/images/html_lqpjj3.jpg",
     duration: "2hr 3min",
   },
   {
@@ -206,7 +207,7 @@ const courses = [
       "Without CSS every webpage would just be plain text and boring. With this step but step course for beginners you'll learn many aspects of styling web pages to create something suited to your needs",
     link: "https://www.codecademy.com/learn/learn-css",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469725/images/css_obdpfq.jpg",
     duration: "20 hours to complete in total",
   },
   {
@@ -217,7 +218,7 @@ const courses = [
       "LLearn some of the more advanced topics in CSS. Extra link: https://flexboxfroggy.com/",
     link: "https://www.udemy.com/course/advanced-css-and-sass/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469725/images/css_obdpfq.jpg",
     duration: "28 hours on-demand video",
   },
   {
@@ -228,7 +229,7 @@ const courses = [
       "This course will teach you everything you need to know about the DOM (Document Object Model)",
     link: "https://classroom.udacity.com/courses/ud117",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469730/images/javascript_ln3knc.png",
     duration: "8 hours",
   },
   {
@@ -239,7 +240,7 @@ const courses = [
       "Join this advanved course and learn the complete react-redux system.",
     link: "https://www.udemy.com/course/modern-react/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469734/images/react_u5w0fw.png",
     duration: "4hr 38min",
   },
   {
@@ -249,7 +250,7 @@ const courses = [
     description: "All you'll need to know to get you started with React.js",
     link: "https://www.udemy.com/course/react-tutorial/",
     image:
-      "https://codigoonclick.com/wp-content/uploads/2019/05/practice-javascript-and-learn-functions-400x277.png",
+      "https://res.cloudinary.com/skillbees/image/upload/v1613469734/images/react_u5w0fw.png",
     duration: "2hr 49min ",
   },
 ];

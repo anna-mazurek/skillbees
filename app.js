@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const hbs = require("hbs");
+// const fileUploader = require("../configs/cloudinary.config");
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
