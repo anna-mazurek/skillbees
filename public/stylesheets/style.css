@@ -245,7 +245,7 @@ input {
   overflow: auto;
 }
 .remove-btn {
-  background-color: white;
+  background-color: #fbce2c;
   border-radius: 20px;
   height: 25px;
   width: 90px;
@@ -259,6 +259,49 @@ input {
   width: 220px;
   border: none;
 }
+
+/*favorites section*/
+
+.favorites {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.favorites h1 {
+  font-size: 45px;
+}
+
+.favorites h2 {
+  color: white;
+}
+
+.favorites-course-list {
+  padding-top: 70px;
+}
+
+.favorites form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  padding-top: 15px;
+}
+
+.favorites hr {
+  border: 1px solid white;
+}
+
+.favorites-description {
+  max-width: 800px;
+  text-align: justify;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/*my account section*/
 
 .myaccount {
   height: 800px;
