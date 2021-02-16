@@ -1,17 +1,19 @@
 <h1>My Courses</h1>
 
-<button><a href="/user">Back to homepage</a></button>
+<a href="/user">Back to homepage</a>
 
 
 {{#each courses}}
 
 <form action="/user/{{this.id}}/remove" method="POST">
-
+<div class="img">
+<a href="{{this.link}}">   
+<img class="course-img" src="{{this.image}}" alt="course-img">
+</a>
+</div>
 <h2>{{this.name}}</h2>
 <h2>{{this.description}}</h2>
-<h2>{{this.link}}</h2>
-
-<button>Remove</button>
+<button class="remove-btn">Remove</button>
 </form>
 
 

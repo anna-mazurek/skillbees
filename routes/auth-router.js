@@ -8,6 +8,7 @@ const saltRounds = 10;
 authRouter.get("/", (req, res, next) => {
   res.render("auth-views/signup");
 });
+
 authRouter.post("/", (req, res, next) => {
   const { fullname, email, password } = req.body;
   if (fullname === "" || email === "" || password === "") {
@@ -39,12 +40,14 @@ authRouter.post("/", (req, res, next) => {
       const hashedPW = bcrypt.hashSync(password, salt);
       User.create({ fullname, email, password: hashedPW })
         .then((createdUser) => {
+          req.session.currentUser = createdUser; // creates the session and the cookie, logs in the user right away
           res.redirect("/user");
         })
         .catch((err) => {
-          res.render("auth-views/signup", {
-            errorMessage: "There was an error try again!",
-          });
+          // res.render("auth-views/signup", {
+          //   errorMessage: "There was an error try again!",
+          // });
+          next(err);
         });
     })
     .catch((err) => next(err));
