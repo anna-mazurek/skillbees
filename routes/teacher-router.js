@@ -90,22 +90,18 @@ teacherRouter.get("/logout", (req, res, next) => {
     if (err) {
       next(err);
     } else {
-      res.redirect("/teacher/login");
+      res.redirect("/login");
     }
   });
 });
 
-teacherRouter.get("/homepage", isLoggedIn, async (req, res, next) => {
-  const { _id: teacherId } = req.session.currentUser;
-  const teacher = await Teacher.findById(teacherId).populate("Course");
-  const data = { courses: teacher.courses };
-  res.render("teacher-views/homepage", data);
+teacherRouter.get("/homepage", isLoggedIn, (req, res, next) => {
+  res.render("teacher-views/homepage");
 });
 
-teacherRouter.get("/add-course", isLoggedIn, async (req, res, next) => {
+teacherRouter.get("/add-course", isLoggedIn, (req, res, next) => {
   res.render("teacher-views/add-course");
 });
-
 teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
   const {
     name,
@@ -116,28 +112,22 @@ teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
     link,
     image,
   } = req.body;
-
-  Course.create({
-    name,
-    technology,
-    level,
-    duration,
-    description,
-    link,
-    image,
-  });
-  const { _id } = req.session.currentUser;
-  const courseId = req.body.course_Id
+  Course.create({ name, technology, level, duration, description, link, image })
     .then((createdCourse) => {
+      console.log(createdCourse);
+      const { _id } = req.session.currentUser;
+      console.log(_id);
+      const courseId = createdCourse._id;
       const user = Teacher.findByIdAndUpdate(
-        teacherId,
-        { $push: { courses: createdCourse } },
+        _id,
+        { $push: { courses: courseId } },
         { new: true }
-      ).then((resposne) => {
-        return res.redirect("/teacher/homepage");
+      ).then((response) => {
+        console.log(response);
+        res.redirect("/teacher/homepage");
       });
     })
-    .catch((error) => console.log(error));
+    .catch((err) => console.log(err));
 });
 
 teacherRouter.get("/edit/:courseId", isLoggedIn, (req, res, next) => {
@@ -149,7 +139,6 @@ teacherRouter.get("/edit/:courseId", isLoggedIn, (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
-
 teacherRouter.post("/edit/:courseId", isLoggedIn, (req, res, next) => {
   const { courseId } = req.params;
   const {
@@ -161,7 +150,6 @@ teacherRouter.post("/edit/:courseId", isLoggedIn, (req, res, next) => {
     link,
     image,
   } = req.body;
-
   Course.findByIdAndUpdate(
     courseId,
     {
