@@ -95,8 +95,11 @@ teacherRouter.get("/logout", (req, res, next) => {
   });
 });
 
-teacherRouter.get("/homepage", isLoggedIn, (req, res, next) => {
-  res.render("teacher-views/homepage");
+teacherRouter.get("/homepage", isLoggedIn, async (req, res, next) => {
+  const { _id } = req.session.currentUser;
+  const teacher = await Teacher.findById(_id).populate("courses");
+  const data = { courses: teacher.courses };
+  res.render("teacher-views/homepage", data);
 });
 
 teacherRouter.get("/add-course", isLoggedIn, (req, res, next) => {

@@ -2,3 +2,11 @@
 
 <h2><a href="/teacher/add-course">Add a new course</a></h2>
 
+{{#each courses}}
+
+<h2>{{this.name}}</h2>
+<a href="{{this.link}}"><p>THIS LINK</p></a>
+<h3>{{this.description}}</h3>
+
+
+{{/each}}
