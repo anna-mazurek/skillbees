@@ -133,7 +133,6 @@ teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
 
 teacherRouter.get("/edit/:courseId", isLoggedIn, (req, res, next) => {
   const { courseId } = req.params;
-  console.log(courseId);
   Course.findById(courseId)
     .then((oneCourse) => {
       const data = { oneCourse };

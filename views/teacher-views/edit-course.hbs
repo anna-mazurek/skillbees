@@ -1,1 +1,38 @@
-<h2>I am the edit course page</h2>
+<section id="teacher-add-course">
+<h1>Edit course</h1>
+
+<form id="newcourse-form" action="./{{oneCourse.id}}" method="POST">
+  
+    <label for=""></label>
+    <input type="text" name="name" value="{{oneCourse.name}}" />
+
+   <br/>
+
+    <label for=""></label>
+    <input type="text" name="technology" value="{{oneCourse.technology}}" />
+
+  <br/>
+    <label for=""></label>
+    <input type="text" name="level" value="{{oneCourse.level}}" />
+
+  <br/>
+    <label for=""></label>
+    <input type="text" name="description" value="{{oneCourse.description}}" />
+
+  <br/>
+    <label for=""></label>
+    <input type="text" name="link" value="{{oneCourse.link}}" />
+
+  <br/>
+    <label for=""></label>
+    <input type="text" name="image" value="{{oneCourse.image}}" />
+
+      <br/>
+    <label for=""></label>
+    <input type="text" name="duration" value="{{oneCourse.duration}}" />
+
+  <br/>
+    <button class="auth-btn"type="submit">Edit course</button>
+    </form>
+
+  </section>
