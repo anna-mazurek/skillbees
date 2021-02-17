@@ -25,16 +25,17 @@
 <div class="teacher-courses-list-container">
 
 <ul>
-<li><h2>{{this.name}}</h2></li>
-<li><h3>{{this.description}}</h3></li>
-<li>technology: {{this.technology}}</li>
-<li>level: {{this.level}}</li>
-<li>duration: {{this.duration}}</li>
-<li><button class="add-btn"><a href="./edit/{{this._id}}">Edit</a></button></li>
-<form action="./{{this._id}}/remove" method="POST">
-<li><button class="add-btn" type="submit">Remove</button></li>
+    <li><h2>{{this.name}}</h2></li>
+    <li><h3>{{this.description}}</h3></li>
+    <li>technology: {{this.technology}}</li>
+    <li>level: {{this.level}}</li>
+    <li>duration: {{this.duration}}</li>
+    <li><a href="./edit/{{this._id}}"><button class="add-btn">Edit</button></a></li>
+
+<form action="/teacher/{{this._id}}/remove" method="POST">
+    <button class="add-btn">Remove</button>
 </form>
-</ul>
+</ul>   
 
 {{/each}}
 
