@@ -135,7 +135,7 @@ teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
 
 teacherRouter.get("/edit/:courseId", isLoggedIn, (req, res, next) => {
   const { courseId } = req.params;
-  Course.findbyId(courseId)
+  Course.findById(courseId)
     .then((oneCourse) => {
       const data = { oneCourse };
       res.render("teacher-views/edit-course", data);
@@ -170,6 +170,16 @@ teacherRouter.post("/edit/:courseId", isLoggedIn, (req, res, next) => {
       res.redirect("/teacher/homepage");
     })
     .catch((err) => console.log(err));
+});
+
+teacherRouter.post("/:courseId/remove", isLoggedIn, (req, res, next) => {
+  const { courseId } = req.params;
+  Course.findByIdAndRemove(courseId)
+  .then
+    ((removedCourse) => {
+      res.redirect("/teacher/homepage");
+    })
+    .catch((err) => console.log(err))
 });
 
 // app.get("/myaccount", isLoggedIn, (req, res, next) => {});

@@ -1,12 +1,46 @@
-<h1>THIS IS THE TEACHER HOMEPAGE</h1>
+<section id="teacher-homepage">
 
-<h2><a href="/teacher/add-course">Add a new course</a></h2>
+<div class="tagline-teacher">
+
+<h1>Share your skills with the world</h1>
+<h3>Upload your own video tutorials and online materials
+    <br>
+     while building your personal brand.</h3>
+
+<button class="add-course-teacher"><a href="/teacher/add-course">Add a new course</a></button>
+
+</div>
+
+  <h2>Your shared courses</h2>
+
+<div class="teacher-courses-list">
+
 
 {{#each courses}}
 
-<h2>{{this.name}}</h2>
-<a href="{{this.link}}"><p>THIS LINK</p></a>
-<h3>{{this.description}}</h3>
+<a href="{{this.link}}">   
+<img class="teacher-course-img" src="{{this.image}}" alt="course-img">
+</a>
 
+<div class="teacher-courses-list-container">
+
+<ul>
+<li><h2>{{this.name}}</h2></li>
+<li><h3>{{this.description}}</h3></li>
+<li>technology: {{this.technology}}</li>
+<li>level: {{this.level}}</li>
+<li>duration: {{this.duration}}</li>
+<li><button class="add-btn"><a href="./edit/{{this._id}}">Edit</a></button></li>
+<form action="./{{this._id}}/remove" method="POST">
+<li><button class="add-btn" type="submit">Remove</button></li>
+</form>
+</ul>
 
 {{/each}}
+
+</div>
+
+
+</div>
+
+</section>
