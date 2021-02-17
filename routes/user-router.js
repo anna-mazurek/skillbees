@@ -1,6 +1,7 @@
 const express = require("express");
 const Course = require("../models/course");
 const User = require("../models/user");
+const Review = require("../models/review");
 const userRouter = express.Router();
 
 const { isLoggedIn, isDuplicate } = require("../utils/middleware");
@@ -63,11 +64,31 @@ userRouter.post(
 );
 
 //MY COURSES
-userRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
+// userRouter.get("/favorites", isLoggedIn, async (req, res, next) => {
+//   const { _id: userId } = req.session.currentUser;
+//   const user = await User.findById(userId).populate("courses");
+//   const data = { courses: user.courses };
+//   res.render("user-views/favorites", data);
+// });
+
+userRouter.get("/favorites", isLoggedIn, (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
-  const user = await User.findById(userId).populate("courses");
-  const data = { courses: user.courses };
-  res.render("user-views/favorites", data);
+  User.findById(userId)
+    .populate({
+      path: "courses",
+      model: Course,
+      populate: {
+        path: "reviews",
+        model: Review,
+      },
+    })
+    .then((populatedUser) => {
+      console.log(populatedUser);
+      const data = { courses: populatedUser.courses };
+
+      res.render("user-views/favorites", data);
+    })
+    .catch((err) => console.log(err));
 });
 
 // REMOVE COURSE
@@ -90,6 +111,36 @@ userRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
   }
 });
 
+// ADD REVIEW
+
+userRouter.get("/:courseId/review", isLoggedIn, (req, res, next) => {
+  const { courseId } = req.params;
+  console.log("courseId :>> ", courseId);
+  Course.findById(courseId)
+    .then((course) => {
+      console.log("course", course);
+      const data = course;
+      res.render("user-views/form-review", data);
+    })
+    .catch((err) => console.log(err));
+});
+
+userRouter.post("/:courseId/review", isLoggedIn, (req, res, next) => {
+  const { name, comments } = req.body;
+  const { courseId } = req.params;
+
+  Review.create({ name, comments })
+    .then((newReview) => {
+      console.log(newReview);
+      Course.findByIdAndUpdate(courseId, {
+        $push: { reviews: newReview._id },
+      }).then(() => {
+        res.redirect("/user/favorites");
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
 // MY ACCOUNT
 userRouter.get("/account", isLoggedIn, async (req, res, next) => {
   const { _id: userId } = req.session.currentUser;
@@ -108,4 +159,3 @@ userRouter.get("/delete", isLoggedIn, function (req, res, next) {
 });
 
 module.exports = userRouter;
-

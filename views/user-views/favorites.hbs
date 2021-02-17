@@ -1,35 +1,38 @@
 <section class="favorites">
 
-<h1>My Courses</h1>
-{{!-- <a href="/user">Back to homepage</a> --}}
+    <h1>My Courses</h1>
+    {{!-- <a href="/user">Back to homepage</a> --}}
 
-<div class="favorites-course-list">
+    <div class="favorites-course-list">
+    {{#each courses}}
 
-
-
-
-{{#each courses}}
-
-<form action="/user/{{this.id}}/remove" method="POST">
-<div class="img">
-<a href="{{this.link}}">   
-<img class="course-img" src="{{this.image}}" alt="course-img">
-</a>
-</div>
+        <form action="/user/{{this._id}}/remove" method="POST">
+            <div class="img">
+                <a href="{{this.link}}">   
+                    <img class="course-img" src="{{this.image}}" alt="course-img">
+                </a>
+            </div>
 
 
 
-<div class="favorites-description">
-<h2>{{this.name}}</h2>
-<p>{{this.description}}</p>
-</div>
-<button class="remove-btn">Remove</button>
-</form>
-<hr>
+            <div class="favorites-description">
+                <h2>{{this.name}}</h2>
+                <p>{{this.description}}</p>
+            </div>
+            <button class="remove-btn">Remove</button>
+        </form>
 
+        <a href="/user/{{this._id}}/review">
+            <button class="add-review-btn">Add Review</button>
+        </a>
 
-{{/each}}
-
-</div>
+        <h3>Course reviews</h3>
+        {{#each this.reviews}}
+            <p>{{name}}</p>
+            <p>{{comments}}</p>
+        {{/each}}
+        <hr>
+    {{/each}}
+    </div>
 </section>
 

@@ -173,7 +173,7 @@ teacherRouter.post("/edit/:courseId", isLoggedIn, (req, res, next) => {
 teacherRouter.post("/:courseId/remove", isLoggedIn, (req, res, next) => {
   const { courseId } = req.params;
   const { _id } = req.session.currentUser;
-  Course.findOneAndRemove(courseId)
+  Course.findByIdAndRemove(courseId)
     .then((removedCourse) => {
       res.redirect("/teacher/homepage");
     })

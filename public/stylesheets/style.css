@@ -382,6 +382,18 @@ footer h3 {
   padding-top: 20px;
 }
 
+.add-review-btn {
+  background-color: #fbce2c;
+  border-radius: 20px;
+  height: 25px;
+  width: 90px;
+  border: none;
+}
+
+.add-review-btn a {
+  color: black;
+}
+
 /*my account section*/
 
 .myaccount {

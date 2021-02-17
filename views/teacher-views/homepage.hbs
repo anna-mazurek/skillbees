@@ -30,8 +30,8 @@
 <li>technology: {{this.technology}}</li>
 <li>level: {{this.level}}</li>
 <li>duration: {{this.duration}}</li>
-<li><button class="add-btn"><a href="./edit/{{this._id}}">Edit</a></button></li>
-<form action="./{{this._id}}/remove" method="POST">
+<li><button class="add-btn"><a href="/teacher/edit/{{this._id}}">Edit</a></button></li>
+<form action="/teacher/{{this._id}}/remove" method="POST">
 <li><button class="add-btn" type="submit">Remove</button></li>
 </form>
 </ul>
