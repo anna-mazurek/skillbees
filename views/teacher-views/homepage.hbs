@@ -1,12 +1,20 @@
 <h1>THIS IS THE TEACHER HOMEPAGE</h1>
 
 <h2><a href="/teacher/add-course">Add a new course</a></h2>
+<a href="/teacher/myaccount"><h2>My Account</h2></a>
 
 {{#each courses}}
 
 <h2>{{this.name}}</h2>
 <a href="{{this.link}}"><p>THIS LINK</p></a>
 <h3>{{this.description}}</h3>
+<a href="/teacher/edit/{{this.id}}"><button>Edit Course</button></a>
 
+
+<form action="/teacher/{{this.id}}/remove" method="POST">
+<button>Delete Course</button>
+</form>
 
 {{/each}}
+
+

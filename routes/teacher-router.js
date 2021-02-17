@@ -117,9 +117,7 @@ teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
   } = req.body;
   Course.create({ name, technology, level, duration, description, link, image })
     .then((createdCourse) => {
-      console.log(createdCourse);
       const { _id } = req.session.currentUser;
-      console.log(_id);
       const courseId = createdCourse._id;
       const user = Teacher.findByIdAndUpdate(
         _id,
@@ -135,7 +133,8 @@ teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
 
 teacherRouter.get("/edit/:courseId", isLoggedIn, (req, res, next) => {
   const { courseId } = req.params;
-  Course.findbyId(courseId)
+  console.log(courseId);
+  Course.findById(courseId)
     .then((oneCourse) => {
       const data = { oneCourse };
       res.render("teacher-views/edit-course", data);
@@ -172,6 +171,21 @@ teacherRouter.post("/edit/:courseId", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-// app.get("/myaccount", isLoggedIn, (req, res, next) => {});
+teacherRouter.post("/:courseId/remove", isLoggedIn, (req, res, next) => {
+  const { courseId } = req.params;
+  const { _id } = req.session.currentUser;
+  Course.findOneAndRemove(courseId)
+    .then((removedCourse) => {
+      res.redirect("/teacher/homepage");
+    })
+    .catch((err) => console.log(err));
+});
+
+teacherRouter.get("/myaccount", isLoggedIn, async (req, res, next) => {
+  const { _id: teacherId } = req.session.currentUser;
+  const user = await Teacher.findById(teacherId);
+  const data = { user };
+  res.render("teacher-views/myaccount", data);
+});
 
 module.exports = teacherRouter;
