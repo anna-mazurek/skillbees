@@ -532,6 +532,10 @@ hr {
   color: black;
 }
 
+#tech-input {
+  text-transform: lowercase;
+}
+
 .teacher-course-img {
   width: 250px;
   height: auto;

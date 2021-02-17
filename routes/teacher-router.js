@@ -124,7 +124,6 @@ teacherRouter.post("/add-course", isLoggedIn, (req, res, next) => {
         { $push: { courses: courseId } },
         { new: true }
       ).then((response) => {
-        console.log(response);
         res.redirect("/teacher/homepage");
       });
     })

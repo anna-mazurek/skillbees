@@ -6,30 +6,34 @@
 <div class="favorites-course-list">
 
 
-
-
 {{#each courses}}
 
 <form action="/user/{{this.id}}/remove" method="POST">
+
 <div class="img">
 <a href="{{this.link}}">   
 <img class="course-img" src="{{this.image}}" alt="course-img">
 </a>
 </div>
 
-
-
 <div class="favorites-description">
 <h2>{{this.name}}</h2>
 <p>{{this.description}}</p>
+
 </div>
+
 <button class="remove-btn">Remove</button>
 </form>
-<hr>
 
+<a href="/user/{{this.id}}/review"><button>Add Review</button></a>
+
+{{#each this.reviews}}
+<p>{{this.title}}</p>
+<p>{{this.comments}}</p>
 
 {{/each}}
 
+{{/each}}
 </div>
 </section>
 

@@ -9,6 +9,7 @@ const courseSchema = new Schema({
   link: { type: String },
   image: { type: String },
   duration: { type: String },
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
 });
 
 const Course = mongoose.model("Course", courseSchema);
