@@ -13,24 +13,25 @@
                 </a>
             </div>
 
-
-
             <div class="favorites-description">
                 <h2>{{this.name}}</h2>
                 <p>{{this.description}}</p>
-            </div>
-            <button class="remove-btn">Remove</button>
+            <button class="remove-favorite-btn">Remove</button>
         </form>
-
+       
+        </div>
         <a href="/user/{{this._id}}/review">
-            <button class="add-review-btn">Add Review</button>
+            <button class="add-review-btn">Add a review</button>
         </a>
-
-        <h3>Course reviews</h3>
+        <div class="reviews-section">
+        <h3><img class="review-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613653486/images/star_jgexl4.png"> Course reviews</h3>
+       <div class="review-section-background">
         {{#each this.reviews}}
-            <p>{{title}}</p>
-            <p>{{comments}}</p>
+            <p><img class="review-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613653513/images/user_xbg4bj.png"> {{title}}</p>
+            <p class="comments">{{comments}}</p>
         {{/each}}
+        </div>
+        </div>
         <hr>
     {{/each}}
     </div>

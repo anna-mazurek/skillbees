@@ -1,18 +1,22 @@
-<h2>I AM REVIEW PAGE</h2>
-
+<section id="new-review">
+<h3>Really enjoyed this course? Do you think it could use some improvements?</h3>
+<h3 style="color: white">Share your thoughts here!</h3>
+<img class="hand-star" src="https://res.cloudinary.com/skillbees/image/upload/v1613647860/images/rating_mvwzkc.png">
+<div class="review-form">
 <form action="/user/{{_id}}/review" method="POST">
 
 
-  <label>Title:</label>
-  <input type='text' name='title'>
+  <label></label>
+  <input class="review-name" type='text' name='title' placeholder="Username">
 
   <br />
-  <label>Comment:</label>
+  <label></label>
 
-  <input type='text' name='comments'>
+  <input class="review-comments" type='text' name='comments' placeholder="Your comment">
   <br />
 
-  <button type='submit'>Add Review</button>
+  <button class="new-review-btn" type='submit'>Submit</button>
 
 </form>
-
+</div>
+</section>

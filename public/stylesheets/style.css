@@ -367,7 +367,7 @@ footer h3 {
 .favorites form {
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   padding-top: 15px;
 }
 
@@ -378,7 +378,6 @@ footer h3 {
 .favorites-description {
   max-width: 800px;
   text-align: justify;
-  padding-bottom: 20px;
   padding-top: 20px;
 }
 
@@ -386,12 +385,35 @@ footer h3 {
   background-color: #fbce2c;
   border-radius: 20px;
   height: 25px;
-  width: 90px;
+  width: 110px;
   border: none;
 }
 
 .add-review-btn a {
   color: black;
+}
+
+.remove-favorite-btn {
+  background-color: #fbce2c;
+  border-radius: 20px;
+  height: 25px;
+  width: 90px;
+  border: none;
+  margin-top: 20px;
+}
+
+.reviews-section {
+  width: 500px;
+  padding-top: 15px;
+}
+
+.comments {
+  font-style: italic;
+}
+
+.review-section-background {
+  border-radius: 7px;
+  padding: 5px;
 }
 
 /*my account section*/
@@ -544,10 +566,6 @@ hr {
   color: black;
 }
 
-#tech-input {
-  text-transform: lowercase;
-}
-
 .teacher-course-img {
   width: 250px;
   height: auto;
@@ -573,4 +591,93 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+#newcourse-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#newcourse-form input {
+  width: 400px;
+  height: 40px;
+}
+
+#newcourse-form select {
+  width: 400px;
+  height: 40px;
+}
+
+.tech-input {
+  text-transform: lowercase;
+}
+
+#newcourse-form input,
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px;
+  text-indent: 10px;
+}
+
+#new-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#new-review h3 {
+  text-align: center;
+}
+
+#new-review form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.review-name {
+  width: 500px;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #fbce2c;
+  text-indent: 10px;
+}
+
+.review-comments {
+  width: 500px;
+  height: 150px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #fbce2c;
+  text-indent: 10px;
+  margin-bottom: 20px;
+}
+
+.new-review-btn {
+  background-color: #fbce2c;
+  border-radius: 20px;
+  height: 40px;
+  width: 170px;
+  border: none;
+}
+
+.hand-star {
+  height: 100px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.review-icon {
+  height: 20px;
+  width: auto;
 }
