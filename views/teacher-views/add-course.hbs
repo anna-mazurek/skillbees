@@ -1,7 +1,17 @@
+<nav class="nav-bar">
+    <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+    <ul>
+        <a href="/teacher/homepage"><li>Home</li></a>
+        <a href="/teacher/add-course"><li>Add a course</li></a>
+        {{!-- <a href="#footer"><li>Contact Us</li></a> --}}
+        <a href="/teacher/myaccount"><li>My Account</li></a>
+    </ul>
+</nav>
+
 <section id="teacher-add-course">
 <h1>New course</h1>
 
-<form id="newcourse-form" action="/teacher/add-course" method="POST">
+<form id="newcourse-form" action="/teacher/add-course" method="POST" enctype="multipart/form-data">
   
     <label for=""></label>
     <input type="text" name="name" placeholder="course name" />
@@ -30,14 +40,16 @@
 
   <br/>
     <label for=""></label>
-    <input type="text" name="image" placeholder="image URL" />
-
-      <br/>
-    <label for=""></label>
     <input type="text" name="duration" placeholder="duration" />
 
   <br/>
+    
+    <label for=""></label>
+    <input type="file" name="image" placeholder="image URL" />
+
+  <br/>
+
     <button class="auth-btn"type="submit">Add new course</button>
     </form>
 
-  </section>
+</section>

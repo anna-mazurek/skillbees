@@ -1,7 +1,17 @@
+<nav class="nav-bar">
+    <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+    <ul>
+        <a href="/teacher/homepage"><li>Home</li></a>
+        <a href="/teacher/add-course"><li>Add a course</li></a>
+        {{!-- <a href="#footer"><li>Contact Us</li></a> --}}
+        <a href="/teacher/myaccount"><li>My Account</li></a>
+    </ul>
+</nav>
+
 <section id="teacher-add-course">
 <h1>Edit course</h1>
 
-<form id="newcourse-form" action="./{{oneCourse.id}}" method="POST">
+<form id="newcourse-form" action="./{{oneCourse.id}}" method="POST" enctype="multipart/form-data">
   
     <label for=""></label>
     <input type="text" name="name" value="{{oneCourse.name}}" />
@@ -25,14 +35,13 @@
 
   <br/>
     <label for=""></label>
-    <input type="text" name="image" value="{{oneCourse.image}}" />
-
-      <br/>
-    <label for=""></label>
     <input type="text" name="duration" value="{{oneCourse.duration}}" />
+  <br/>
+
+    <label for=""></label>
+    <input type="file" name="image" value="{{oneCourse.image}}" />
 
   <br/>
     <button class="auth-btn"type="submit">Edit course</button>
     </form>
-
-  </section>
+</section>
