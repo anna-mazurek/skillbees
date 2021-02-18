@@ -1,13 +1,22 @@
+<nav class="nav-bar">
+    <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+    <ul>
+        <a href="/user"><li>Learning</li></a>
+        <a href="/user/favorites"><li>My Courses</li></a>
+        <a href="/user/account"><li>My Account</li></a>
+    </ul>
+</nav>
 
 <div class = "myaccount">
-<a href="/user">Back to homepage</a>
 <h1>My Account</h1>
 <section id = "personal-details">
-<h1 style="color:#fbce2c;">Personal details:</h1>
-<h3>{{user.fullname}}</h3>
-<h3>{{user.email}}</h3>
+  <h1 style="color:#fbce2c;">Personal details:</h1>
+    <h3>{{user.fullname}}</h3>
+    <h3>{{user.email}}</h3>
 </section>
+
 <br>
+
 <section id = "account-delete">
  <button onclick="document.getElementById('id01').style.display='block'">Delete Account</button>
 

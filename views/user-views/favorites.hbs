@@ -1,8 +1,15 @@
+<nav class="nav-bar">
+    <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+    <ul>
+        <a href="/user"><li>Learning</li></a>
+        <a href="/user/favorites"><li>My Courses</li></a>
+        <a href="/user/account"><li>My Account</li></a>
+    </ul>
+</nav>
+
 <section class="favorites">
-
     <h1>My Courses</h1>
-    {{!-- <a href="/user">Back to homepage</a> --}}
-
+    
     <div class="favorites-course-list">
     {{#each courses}}
 
@@ -12,8 +19,6 @@
                     <img class="course-img" src="{{this.image}}" alt="course-img">
                 </a>
             </div>
-
-
 
             <div class="favorites-description">
                 <h2>{{this.name}}</h2>
