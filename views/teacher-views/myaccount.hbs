@@ -1,5 +1,31 @@
-<h2>My Account</h2>
+<nav class="nav-bar">
+    <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+   <ul>
+        <a href="/teacher/homepage"><li>Home</li></a>
+        <a href="/teacher/add-course"><li>Add a course</li></a>
+        {{!-- <a href="#footer"><li>Contact Us</li></a> --}}
+        <a href="/teacher/myaccount"><li>My Account</li></a>
+    </ul>
+</nav>
 
-{{user.fullname}}
-{{user.email}}
-{{user.about}}
+<section class="account">
+<h2>My Account</h2>
+<div>
+    <img src="{{user.image}}" alt="" />
+</div> 
+<div id="account-info">
+   <p>Name: {{user.fullname}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Specialisation: {{user.about}}</p>
+
+</div>   
+</div>
+
+<form action='/teacher/logout' method='GET'>
+    <button class="logout-button" type='submit'>Logout</button>
+</form>
+
+</section>
+
+
+

@@ -66,7 +66,9 @@ function myFunction() {
     {{#each allCourses}}
         <form action="/user/{{this.id}}/favorites" method="POST">
             <div id="pop-img">
-                <img src="{{this.image}}" alt="">
+                  <a href="{{this.link}}">   
+                    <img src="{{this.image}}" alt="course-img">
+                </a>
             </div>
             <h4>{{this.technology}}</h4>
             <h5>{{this.name}}</h5>
