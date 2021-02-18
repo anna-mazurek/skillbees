@@ -21,6 +21,55 @@ a {
   text-decoration: none;
 }
 
+/*MOBILE NAVBAR*/
+
+#mobile-logo {
+  width: 120px;
+  height: auto;
+}
+
+/* Style the navigation menu */
+.mobile-nav {
+  overflow: hidden;
+  background-color: #1c3e6c;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.mobile-nav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.mobile-nav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.mobile-nav a.icon {
+  background: #34c3b8;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.mobile-nav a:hover {
+  background-color: #34c3b8;
+  color: #1c3e6c;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #34c3b8;
+  color: white;
+}
+
 /*USER HOMEPAGE*/
 #nav-logo {
   width: 170px;
@@ -108,13 +157,12 @@ a {
   justify-content: inherit;
 }
 .popular-courses img {
-  height: 75px;
+  height: 95px;
   width: auto;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 
 #pop-img {
-  background-color: white;
   border-radius: 20px;
   width: 150px;
   height: 100px;
@@ -349,9 +397,9 @@ a {
   margin-bottom: 70px;
 }
 
-.course-img {
+/* .course-img {
   width: 180px;
-}
+} */
 
 .btn-course {
   display: flex;
@@ -364,11 +412,10 @@ a {
   margin: 6px;
 }
 
-.img {
-  background-color: white;
-  border-radius: 20px;
+.course-img {
+  border-radius: 15px;
   width: 250px;
-  height: 190px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -739,4 +786,16 @@ select {
 .review-icon {
   height: 20px;
   width: auto;
+}
+
+@media only screen and (min-width: 601px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-bar {
+    display: none;
+  }
 }
