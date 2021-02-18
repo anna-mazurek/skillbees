@@ -1,17 +1,24 @@
+
+    <nav class="nav-bar">
+        <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+         <ul>
+        <a href="/user"><li>Learning</li></a>
+        <a href="/user/favorites"><li>My Courses</li></a>
+        <a href="#footer"><li>Contact Us</li></a>
+        <a href="/user/account"><li>My Account</li></a>
+        </ul>
+    </nav>
+
 <section class="menu">
-    <ul>
-        <li><a href="/user">Learning</a></li>
-        <li><a href="/user/favorites">My Courses</a></li>
-        <li><a href="#footer">Contact Us</a></li>
-        <li><a href="/user/account">My Account</a></li>
-    </ul>
 <div>
     <h3>What do you want to learn today?</h3>
 </div>
 </section>
-  <h2>Technologies</h2>
-<div id="tech-list">
+
+<h2 id="tech-header">Technologies</h2>
 <section class="topics">
+<div id="tech-list">
+
     <button class="technology-button"><a href="/user/courses/javascript">Javascript</a></button>
     <button class="technology-button"><a href="/user/courses/react">React</a></button>
     <button class="technology-button"><a href="/user/courses/html">HTML</a></button>
@@ -20,40 +27,36 @@
     <button class="technology-button"><a href="/user/courses/r">R</a></button>
     <button class="technology-button"><a href="/user/courses/sql">SQL</a></button>
     <button class="technology-button"><a href="/user/courses/python">Python</a></button>
+</div>
 </section>
 
-</div>
-
 <section class="popular">
-<h2>Popular Courses</h2>
+    <h2>Popular Courses</h2>
 
-<div class="popular-courses">
-{{#each allCourses}}
-<form action="/user/{{this.id}}/favorites" method="POST">
+    <div class="popular-courses">
+    {{#each allCourses}}
+        <form action="/user/{{this.id}}/favorites" method="POST">
+            <div id="pop-img">
+                <img src="{{this.image}}" alt="">
+            </div>
+            <h4>{{this.technology}}</h4>
+            <h5>{{this.name}}</h5>
 
-   <img src="{{this.image}}" alt="">
-    <h4>{{this.technology}}</h4>
-    <h5>{{this.name}}</h5>
-
-    <button class="join-button">Join</button>
-
-</form>
-{{/each}}
-</div>
+            <button class="join-button">Join</button>
+        </form>
+    {{/each}}
+    </div>
 </section>
 
 <section class="footer" id="footer">
   <h3>Contact us</h3>
   <div class="contact">
-      <img id="email" src="/images/email.png" alt="emailLogo">
-      <p>help@skillbees.com</p>
-  </div>
-     <div>
+      <img id="email" src="/images/email.png" alt="emailLogo"><p>help@skillbees.com</p>
       <img id="linkedin" src="/images/linkedin.png" alt="linkedlogo"/>
       <br>
       <a href="">Georgia Adams</a>
-      <br>
       <a href="">Anna Mazurek</a>
     </div>
+    <p>© Skillbees 2021</p>
 
 </section>
