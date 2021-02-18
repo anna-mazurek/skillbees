@@ -16,6 +16,8 @@ const userRouter = require("./routes/user-router");
 const teacherRouter = require("./routes/teacher-router");
 const { isLoggedIn, isDuplicate } = require("./utils/middleware");
 
+// TEST
+
 var app = express();
 
 mongoose
