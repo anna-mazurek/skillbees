@@ -389,6 +389,11 @@ a {
   margin: 0 auto;
 }
 
+.error {
+  margin: 0;
+  font-size: 15px;
+}
+
 /*TECHNOLOGY VIEW - LIST*/
 .add-btn {
   background-color: #fbce2c;

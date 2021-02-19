@@ -48,12 +48,18 @@
         <br/>
             <button class="auth-btn"type="submit">SIGN UP</button>
         </form>
-
+{{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+{{/if}}
 <div class="to-login">
     <p>Already a user?</p>
     <a href="/login"><button>Login</button></a>
 </div>
-    </div>
+
+
+</div>
+
+
 
 <div class="welcome">
     <h2>WELCOME TO SKILLBEES!</h2>
