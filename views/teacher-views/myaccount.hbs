@@ -12,11 +12,12 @@
 <h2>My Account</h2>
 <div>
     <img class="teacher-image" src="{{user.image}}" alt="" />
-</div> 
+</div>
+ <button class="edit-button-teacher ">Edit profile</button> 
 <div id="account-info">
    <p><img class="teacher-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613653513/images/user_xbg4bj.png" > Name: {{user.fullname}}</p>
-   <p><img class="teacher-icon" src="https://www.flaticon.com/svg/vstatic/svg/1161/1161724.svg?token=exp=1613679830~hmac=aeba2680718dbfcc385ff85e0ff70f18"> Email: {{user.email}}</p>
-    <p><img class="teacher-icon" src="https://www.flaticon.com/svg/vstatic/svg/2436/2436636.svg?token=exp=1613679883~hmac=265e0743f7da5e7daa1ca3289aabcf37"> Specialisation: {{user.about}}</p>
+   <p><img class="teacher-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613727420/images/open-email_xqyy7d.png"> Email: {{user.email}}</p>
+    <p><img class="teacher-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613727752/images/specialization_qmlhot.png"> Specialisation: {{user.about}}</p>
 
 </div>   
 </div>
@@ -24,7 +25,7 @@
 <form action='/teacher/logout' method='GET'>
     <button class="logout-button-teacher" type='submit'>Logout</button>
 </form>
-
+   
 </section>
 
 
