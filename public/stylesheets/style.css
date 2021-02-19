@@ -532,7 +532,6 @@ a {
 }
 
 #personal-details {
-  background-color: white;
   width: 480px;
   height: 220px;
   border-radius: 40px;
@@ -804,8 +803,8 @@ select {
   flex-direction: column;
   align-items: center;
 }
-.account img {
-  border-radius: 50px;
+.teacher-image {
+  border-radius: 100px;
   width: 150px;
   height: auto;
 }
@@ -816,15 +815,73 @@ select {
 
 #account-info {
   margin-top: 20px;
-  background-color: white;
   width: 360px;
   border-radius: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
+  text-align: left;
+}
+
+.teacher-icon {
+  width: 20px;
+  height: auto;
+}
+
+.logout-button-teacher {
+  background-color: #fbce2c;
+  border-radius: 20px;
+  height: 35px;
+  width: 220px;
+  border: none;
+  margin-top: 25px;
+}
+
+/* MOBILE LOGIN USER */
+
+.auth-box-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.login-mobile-icon {
+  width: 20px;
+  height: auto;
+}
+
+.mobile-teacher-join {
+  background-color: #d54836;
+  border-radius: 20px;
+  height: 35px;
+  width: 320px;
+  border: none;
+  margin-top: 7px;
+}
+
+.mobile-teacher-join a {
+  color: white;
+}
+
+/*MOBILE LOGIN TEACHER*/
+
+.teach-auth-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
 }
 
 @media only screen and (min-width: 601px) {
   .mobile-nav {
+    display: none;
+  }
+
+  .auth-box-mobile {
+    display: none;
+  }
+
+  .teach-auth-mobile {
     display: none;
   }
 }
@@ -833,5 +890,12 @@ select {
   .nav-bar {
     display: none;
   }
-}
 
+  .auth-view {
+    display: none;
+  }
+
+  .teach-view {
+    display: none;
+  }
+}
