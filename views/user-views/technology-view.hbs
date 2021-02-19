@@ -3,39 +3,47 @@
     <ul>
         <a href="/user"><li>Learning</li></a>
         <a href="/user/favorites"><li>My Courses</li></a>
-        <a href="/user/account"><li>My Account</li></a>
+        <a href="/user/account"><li>My account</li></a>
     </ul>
 </nav>
 
+<h2 id="related-courses">Related Courses</h2>
 <section id="course-list">
+    
 {{#each courses}}
 
 <div id="course-details">
 <div class="img">
-      <a href="{{this.link}}">   
-                    <img class="course-img" src="{{this.image}}" alt="course-img">
-                </a>
+    <a href="{{this.link}}">   
+        <img class="course-img" src="{{this.image}}" alt="course-img">
+    </a>
 </div>
-
 <h4>{{this.name}}</h4>
 <h4>Duration: {{this.duration}}</h4>
-<p class="course-desc">{{this.description}}</p>
+<p class="course-desc id-{{this._id}}">{{this.description}}</p>
+<div class="course-buttons">
 
-
-<form action="/user/{{this.id}}/favorites" method="POST">
-
-<button class="add-btn">Add to favorites</button>
-
-</form>
-
-<button onclick="seeMore()">See more</button>
+  <form action="/user/{{this.id}}/favorites" method="POST">
+  
+    <button class="add-btn">Add to favorites</button>
+  </form>
+  <button id="seemore"class="course-button id-{{this._id}}" > See more </button>
+</div>
 </div>
 {{/each}} 
 </section>
 
 <script>
-function seeMore() {
-   const element = document.querySelector(".course-desc");
-   element.classList.toggle("show-more");
+function handleClick(id) {
+  const seeMoreContainer = document.querySelector(`.${id}`)
+  seeMoreContainer.classList.toggle("show-more");
 }
+function setUpShowMoreClicks (){
+  const allButtons = document.querySelectorAll(".course-button")
+  allButtons.forEach((b)=>{
+    const buttonId = b.classList[1];
+    b.addEventListener('click', ()=>handleClick(buttonId))
+  })
+}
+setUpShowMoreClicks()
 </script>

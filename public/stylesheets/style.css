@@ -91,10 +91,13 @@ a {
   text-decoration: underline;
   margin-right: 60px;
   font-weight: bold;
-}
-.nav-bar a {
   margin-left: 50px;
 }
+
+.nav-bar li:hover {
+  color: white;
+}
+
 .menu {
   display: flex;
   justify-content: center;
@@ -102,7 +105,7 @@ a {
 }
 .menu h3 {
   color: #1c3e6c;
-  font-size: 25px;
+  font-size: 29px;
   text-shadow: -1px -1px #1c3e6c;
 }
 #tech-header {
@@ -217,9 +220,11 @@ a {
   height: 200px;
 }
 
-.footer p {
-  text-align: end;
-  margin-right: 20px;
+.copyright {
+  position: relative;
+  top: -10px;
+  text-align: right;
+  right: 20px;
 }
 
 .footer h3 {
@@ -227,6 +232,21 @@ a {
   margin-top: 5px;
   padding-left: 40px;
   font-size: 22px;
+}
+
+.course-info {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  color: #1c3e6c;
+}
+
+#related-courses {
+  text-align: center;
+  margin-top: 60px;
+  color: #1c3e6c;
 }
 
 /*AUTH VIEWS */
@@ -371,12 +391,21 @@ a {
 
 /*TECHNOLOGY VIEW - LIST*/
 .add-btn {
-  background-color: white;
+  background-color: #fbce2c;
   border-radius: 20px;
   height: 25px;
   width: 120px;
   border: none;
   margin-top: 40px;
+  margin-bottom: 3px;
+}
+
+#seemore {
+  border-radius: 20px;
+  background-color: white;
+  height: 25px;
+  border: none;
+  width: 80px;
 }
 
 .course-btn {
@@ -397,7 +426,9 @@ a {
 }
 
 #course-details {
-  height: 300px;
+  /* height: 300px; */
+  position: relative;
+  height: 440px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -405,22 +436,22 @@ a {
   width: 400px;
   margin-bottom: 70px;
 }
-
+.course-buttons {
+  position: absolute;
+  bottom: 0;
+}
 /* .course-img {
   width: 180px;
 } */
-
 .btn-course {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
   margin-right: 40px;
 }
-
 #course-details h4 {
   margin: 6px;
 }
-
 .course-img {
   border-radius: 15px;
   width: 250px;
@@ -429,12 +460,13 @@ a {
   justify-content: center;
   align-items: center;
 }
-
 .course-desc {
+  /* max-height: 3.6em; */
+  position: absolute;
+  bottom: 40px;
+  height: 86px;
   overflow: hidden;
-  max-height: 3.6em;
-  margin: 0 auto;
-  padding-bottom: 20px;
+  transition: 2s;
 }
 .show-more::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -442,10 +474,12 @@ a {
 }
 .show-more::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
 }
 .show-more {
   overflow: auto;
+  height: 130px;
+  transition: 2s;
 }
 
 /*FAVORITES SECTION*/
@@ -457,7 +491,9 @@ a {
 }
 
 .favorites h1 {
-  font-size: 45px;
+  font-size: 40px;
+  color: #1c3e6c;
+  margin-top: 60px;
 }
 
 .favorites h2 {
@@ -621,7 +657,6 @@ hr {
   cursor: pointer;
 }
 
-/* Clear floats */
 .clearfix::after {
   content: "";
   clear: both;
@@ -871,7 +906,6 @@ select {
   align-items: center;
   margin-top: 25px;
 }
-
 @media only screen and (min-width: 601px) {
   .mobile-nav {
     display: none;
@@ -885,7 +919,6 @@ select {
     display: none;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .nav-bar {
     display: none;
