@@ -871,6 +871,15 @@ select {
   margin-top: 25px;
 }
 
+.edit-button-teacher {
+  background-color: white;
+  border-radius: 20px;
+  height: 35px;
+  width: 130px;
+  border: none;
+  margin-top: 25px;
+}
+
 /* MOBILE LOGIN USER */
 
 .auth-box-mobile {
