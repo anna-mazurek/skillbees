@@ -3,7 +3,6 @@
    <ul>
         <a href="/teacher/homepage"><li>Home</li></a>
         <a href="/teacher/add-course"><li>Add a course</li></a>
-        {{!-- <a href="#footer"><li>Contact Us</li></a> --}}
         <a href="/teacher/myaccount"><li>My Account</li></a>
     </ul>
 </nav>
@@ -11,20 +10,21 @@
 <section class="account">
 <h2>My Account</h2>
 <div>
-    <img src="{{user.image}}" alt="" />
-</div> 
+    <img class="teacher-image" src="{{user.image}}" alt="" />
+</div>
+ <button class="edit-button-teacher ">Edit profile</button> 
 <div id="account-info">
-   <p>Name: {{user.fullname}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Specialisation: {{user.about}}</p>
+   <p><img class="teacher-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613653513/images/user_xbg4bj.png" > Name: {{user.fullname}}</p>
+   <p><img class="teacher-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613727420/images/open-email_xqyy7d.png"> Email: {{user.email}}</p>
+    <p><img class="teacher-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613727752/images/specialization_qmlhot.png"> Specialisation: {{user.about}}</p>
 
 </div>   
 </div>
 
 <form action='/teacher/logout' method='GET'>
-    <button class="logout-button" type='submit'>Logout</button>
+    <button class="logout-button-teacher" type='submit'>Logout</button>
 </form>
-
+   
 </section>
 
 

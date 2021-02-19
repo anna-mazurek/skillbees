@@ -1,6 +1,36 @@
 <header>
     <img id="logo" src="/images/mainlogo.png" alt="logo"/>
 </header>
+
+{{!-- MOBILE --}}
+
+   <div class="auth-box-mobile">
+        <form id="auth-form" action="/" method="POST">
+            <p style="color:white">NEW TO SKILLBEES? SIGN UP FOR FREE <img class="login-mobile-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613727459/images/bee_edbybi.png"></p>
+
+            <label for=""></label>
+            <input type="text" name="fullname" placeholder="Fullname">
+
+            <label for=""></label>
+            <input type="email" name="email" placeholder="Email">
+
+            <label for=""></label>
+            <input type="password" name="password" placeholder="Password">
+        <br/>
+            <button class="auth-btn"type="submit">SIGN UP</button>
+        </form>
+         <button class="mobile-teacher-join"type="submit"><a href="/teacher/signup">Join as a teacher</a></button>
+
+<div class="to-login">
+    <p style="color:white">Already a user?</p>
+    <a href="/login"><button>Login</button></a>
+</div>
+    </div>
+
+
+{{!-- MOBILE --}}
+
+
 <section class="auth-view"> 
     <div class="auth-box">
         <form id="auth-form" action="/" method="POST">
@@ -18,12 +48,18 @@
         <br/>
             <button class="auth-btn"type="submit">SIGN UP</button>
         </form>
-
+{{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+{{/if}}
 <div class="to-login">
     <p>Already a user?</p>
     <a href="/login"><button>Login</button></a>
 </div>
-    </div>
+
+
+</div>
+
+
 
 <div class="welcome">
     <h2>WELCOME TO SKILLBEES!</h2>
@@ -42,8 +78,4 @@
 </section>
 
 
-{{#if errorMessage}}
-<div>
-    {{errorMessage}}
-</div>
-{{/if}}
+

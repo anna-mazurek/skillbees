@@ -1,3 +1,29 @@
+{{!-- MOBILE --}}
+
+<div class="auth-box-mobile">
+   <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
+  <h3 style="color:white">WELCOME TO SKILLBEES FOR TEACHERS!</h3>
+
+  <p>SIGN IN <img class="login-mobile-icon" src="https://res.cloudinary.com/skillbees/image/upload/v1613727459/images/bee_edbybi.png"></p>
+
+  <form id="auth-form" action="/teacher/login" method="POST">
+  
+    <label for=""></label>
+    <input type="email" id="input-email" name="email" placeholder="Your email" />
+
+   <br/>
+
+    <label for=""></label>
+    <input type="password" name="password" id="input-password" placeholder="password" />
+
+  <br/>
+    <button class="auth-btn"type="submit">LOGIN</button>
+    </form>
+
+</div>
+
+{{!-- MOBILE --}}
+
 <section class="auth-view">
 
 <div class="auth-box">
@@ -17,7 +43,9 @@
   <br/>
     <button class="auth-btn"type="submit">LOGIN</button>
     </form>
-
+  {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+  {{/if}}
 </div>
 
 
@@ -31,6 +59,4 @@
 </section>
 
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
+  

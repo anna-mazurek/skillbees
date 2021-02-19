@@ -40,7 +40,7 @@ authRouter.post("/", (req, res, next) => {
       const hashedPW = bcrypt.hashSync(password, salt);
       User.create({ fullname, email, password: hashedPW })
         .then((createdUser) => {
-          req.session.currentUser = createdUser; // creates the session and the cookie, logs in the user right away
+          req.session.currentUser = createdUser;
           res.redirect("/user");
         })
         .catch((err) => {

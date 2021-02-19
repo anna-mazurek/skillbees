@@ -49,7 +49,7 @@ teacherRouter.post(
           image: req.file.path,
         })
           .then((createdTeacher) => {
-            req.session.currentUser = createdTeacher; // creates the session and the cookie, logs in the user right away
+            req.session.currentUser = createdTeacher; 
             res.redirect("/teacher/homepage");
           })
           .catch((err) => {
@@ -108,7 +108,10 @@ teacherRouter.get("/logout", (req, res, next) => {
 teacherRouter.get("/homepage", isLoggedIn, async (req, res, next) => {
   const { _id } = req.session.currentUser;
   const teacher = await Teacher.findById(_id).populate("courses");
-  const data = { courses: teacher.courses };
+  const data = {
+    courses: teacher.courses,
+    name: req.session.currentUser.fullname,
+  };
   res.render("teacher-views/homepage", data);
 });
 

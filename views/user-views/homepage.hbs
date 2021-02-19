@@ -1,14 +1,14 @@
-
-    <nav class="nav-bar">
+  <nav class="nav-bar">
         <img id="nav-logo"src="/images/mainlogo.png" alt="logo"/>
          <ul>
         <a href="/user"><li>Learning</li></a>
         <a href="/user/favorites"><li>My Courses</li></a>
         <a href="#footer"><li>Contact Us</li></a>
-        <a href="/user/account"><li>My Account</li></a>
+        <a href="/user/account"><li>{{name}}</li></a>
         </ul>
-    </nav>
-  {{!-- Mobile --}}
+  </nav>
+ 
+
 <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -16,7 +16,7 @@
 <div class="mobile-nav">
 <script>
 function myFunction() {
-  var x = document.getElementById("myLinks");
+  const x = document.getElementById("myLinks");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
@@ -30,14 +30,14 @@ function myFunction() {
     <a href="/user">Learning</a>
     <a href="/user/favorites">My Courses</a>
     <a href="#footer">Contact Us</a>
-    <a href="/user/account">My Account</a>
+    <a href="/user/account">{{name}}</a>
   </div>
   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
-{{!-- mobile --}}
+
 <section class="menu">
 <div>
     <h3>What do you want to learn today?</h3>
@@ -66,8 +66,8 @@ function myFunction() {
     {{#each allCourses}}
         <form action="/user/{{this.id}}/favorites" method="POST">
             <div id="pop-img">
-                  <a href="{{this.link}}">   
-                    <img src="{{this.image}}" alt="course-img">
+                <a href="{{this.link}}">   
+                  <img src="{{this.image}}" alt="course-img">
                 </a>
             </div>
             <h4>{{this.technology}}</h4>
@@ -75,6 +75,7 @@ function myFunction() {
 
             <button class="join-button">Join</button>
         </form>
+        {{!-- <a href="/user/{{this.id}}/details"><button>More details</button></a> --}}
     {{/each}}
     </div>
 </section>
@@ -88,6 +89,9 @@ function myFunction() {
       <a href="">Georgia Adams</a>
       <a href="">Anna Mazurek</a>
     </div>
-    <p>© Skillbees 2021</p>
+    <div class="copyright">
+      <h4> © Skillbees 2021 - Georgia and Anna</h4>
+    </div>
+    
 
 </section>
