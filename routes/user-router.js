@@ -10,19 +10,8 @@ userRouter.get("/", isLoggedIn, (req, res, next) => {
   Course.find({})
     .limit(4)
     .then((allCourses) => {
-      const data = { allCourses };
+      const data = { allCourses, name: req.session.currentUser.fullname };
       res.render("user-views/homepage", data);
-    })
-    .catch((err) => console.log(err));
-});
-
-userRouter.get("/courses", isLoggedIn, (req, res, next) => {
-  Course.find()
-    .then((allCourses) => {
-      const data = {
-        allCourses: allCourses,
-      };
-      res.render("user-views/courses-view", data);
     })
     .catch((err) => console.log(err));
 });
@@ -101,6 +90,13 @@ userRouter.post("/:courseId/remove", isLoggedIn, async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+//COURSE DETAILS
+userRouter.get("/:courseId/details", isLoggedIn, async (req, res, next) => {
+  const { courseId } = req.params;
+  const oneCourse = await Course.findById(courseId);
+  res.render("user-views/courses", { oneCourse: oneCourse });
 });
 
 // ADD REVIEW

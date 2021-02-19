@@ -17,6 +17,10 @@
     <br/>
     <button class="auth-btn"type="submit">LOGIN</button>
   </form>
+   {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  
 </div>
 
 
@@ -30,10 +34,7 @@
 </section>
 
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  
+   
 
 
 
