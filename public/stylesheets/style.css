@@ -932,6 +932,10 @@ select {
   .teach-auth-mobile {
     display: none;
   }
+
+  .header-mobile {
+    display: none;
+  }
 }
 @media only screen and (max-width: 600px) {
   .nav-bar {
@@ -943,6 +947,10 @@ select {
   }
 
   .teach-view {
+    display: none;
+  }
+
+  .desktop {
     display: none;
   }
 }
